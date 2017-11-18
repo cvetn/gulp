@@ -10,6 +10,7 @@ $xlg:1450px;
 
 *{
   box-sizing:border-box;
+  font-family: inherit;
 }
 a{
   text-decoration: none;
@@ -21,6 +22,9 @@ body{
 .button{
   border-radius: 5px;
   border: 1px solid #3d3d3d;
+}
+.clearfix{
+  clear: both;
 }
 
 .wrapper {
@@ -54,50 +58,60 @@ body{
   &-entry{
     background-image: url(../img/bgEntry.jpg);
     @media (min-width: $xlg) {
-     background-position: 20% 0;
-   }
- }
- &-slider{
-  background-image: url(../img/slide1.jpg);
-}
-&-parallax{
-  height: 366px;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &1{
-    background-image: url(../img/parallax.jpg);
-  }
-  &2{
-    background-image: url(../img/parallax2.jpg);
-  }
-  &3{
-    background-image: url(../img/parallax3.jpg);
-  }
-}
-&-personal{
-  overflow: hidden;
-  padding: 200px 0 200px 57px;
-  &-item{
-    float: left;
-    padding-right: 75px;
-    @media (max-width: $xlg) {
-      padding-right: 49px;
-      max-width: 61%;
+      background-position: 20% 0;
     }
     @media (max-width: $lg) {
-      max-width: 48%;
+      background-position-x: -140px;
     }
   }
-}
-&-footer{
-  background-color: #262626;
-  color: #c0c0c0;
-}
-&-about{
-  background-image: url(../img/backg-about.jpg);
-  background-position-x: -280px;
-}
+  &-slider{
+    background-image: url(../img/slide1.jpg);
+  }
+  &-parallax{
+    height: 366px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &1{
+      background-image: url(../img/parallax.jpg);
+    }
+    &2{
+      background-image: url(../img/parallax2.jpg);
+    }
+    &3{
+      background-image: url(../img/parallax3.jpg);
+    }
+  }
+  &-personal{
+    overflow: hidden;
+    padding: 200px 0 200px 57px;
+    &-item{
+      float: left;
+      padding-right: 75px;
+      @media (max-width: $xlg) {
+        padding-right: 49px;
+        max-width: 61%;
+      }
+      @media (max-width: $lg) {
+        max-width: 48%;
+      }
+    }
+  }
+  &-footer{
+    background-color: #262626;
+    color: #c0c0c0;
+  }
+  &-about{
+    background-image: url(../img/backg-about.jpg);
+    background-position-x: -280px;
+  }
+  &-discount{
+    background-color: #000;
+    color: #fff;
+  }
+  &-partnership{
+    padding: 85px 0;
+  }
 }
 
 .header{
@@ -105,17 +119,26 @@ body{
   overflow: hidden;
   font-size: 15px;
   font-weight: 300;
+  @media (max-width: $lg) {
+    font-size: 13px;
+  }
   &__logo{
     float: left;
     padding: 8px 198px 0 77px;
     @media (max-width: $xlg) {
       padding: 8px 100px 0 0;
     }
+    @media (max-width: $lg) {
+      padding: 8px 33px 0 0;
+    }
   }
   &__menu{
     padding-top: 13px;
     float: left;
     padding-right: 131px;
+    @media (max-width: $lg) {
+      padding-right: 47px;
+    }
     li{
       display: inline-block;
       &:not(:last-child){
@@ -133,40 +156,40 @@ body{
 
 .entry{
 
- padding:150px 270px 228px 740px;
+  padding:150px 270px 228px 740px;
 
- @media (max-width: $xlg) {
-   padding: 150px 140px 228px 590px;
- }
- @media (max-width: $lg) {
-   padding: 150px 140px 228px 260px;
- }
- @media (max-width: $md) {
-   padding: 150px 140px 228px 30px;
- }
+  @media (max-width: $xlg) {
+    padding: 150px 140px 228px 590px;
+  }
+  @media (max-width: $lg) {
+    padding: 150px 0px 228px 480px;
+  }
+  @media (max-width: $md) {
+    padding: 150px 140px 228px 30px;
+  }
 
 
- &__heading{
-  font-size: 50px;
-  line-height: 65px;
-  text-align: left;
-  font-weight: 300;
-  padding-bottom: 35px;
-}
-&__descr{
-  padding-bottom: 62px;
-  line-height: 29px;
-  color: #bbbbbb;
-}
-&__button{
-  padding: 13px 42px;
-}
+  &__heading{
+    font-size: 50px;
+    line-height: 65px;
+    text-align: left;
+    font-weight: 300;
+    padding-bottom: 35px;
+  }
+  &__descr{
+    padding-bottom: 62px;
+    line-height: 29px;
+    color: #bbbbbb;
+  }
+  &__button{
+    padding: 13px 42px;
+  }
 }
 
 .blockquote{
   padding: 164px 150px  246px 291px;
   @media (max-width: $xlg) {
-    padding: 164px 150px 246px 191px;
+    padding: 164px 100px 246px 161px;
   }
   &__img{
     position: relative;
@@ -190,30 +213,30 @@ body{
 }
 
 .slider{
- padding: 320px 123px 99px 662px;
- @media (max-width: $lg){
-  padding: 315px 3px 99px 582px;
-}
-@media (min-width: $xlg) {
-  padding: 320px  213px 99px 852px;
-}
-@media (max-width: $md){
-  padding: 315px 3px 99px 30px;
-}
+  padding: 320px 123px 99px 662px;
+  @media (max-width: $lg){
+    padding: 315px 3px 99px 582px;
+  }
+  @media (min-width: $xlg) {
+    padding: 320px  213px 99px 852px;
+  }
+  @media (max-width: $md){
+    padding: 315px 3px 99px 30px;
+  }
 
 
 
-&__heading{
-  font-size: 38px;
-  line-height: 55px;
-  padding-bottom: 29px;
-}
-&__descr{
-  font-size: 16px;
-  line-height: 28px;
-  color: #bbbbbb;
-  padding-bottom: 61px;
-}
+  &__heading{
+    font-size: 38px;
+    line-height: 55px;
+    padding-bottom: 29px;
+  }
+  &__descr{
+    font-size: 16px;
+    line-height: 28px;
+    color: #bbbbbb;
+    padding-bottom: 61px;
+  }
 }
 
 .advantages{
@@ -267,21 +290,21 @@ body{
     padding-bottom: 45px;
     padding-top: 83px;
     @media (max-width: $xlg) {
-     padding-top: 43px;
-   }
- }
- &__descr{
-  color: #bbbbbb;
-  font-size: 16px;
-  line-height: 28px;
-  padding-bottom: 67px;
-}
-&__slides li{
-  display: inline-block;
-  &:not(:last-child){
-    padding-right: 54px;
+      padding-top: 43px;
+    }
   }
-}
+  &__descr{
+    color: #bbbbbb;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 67px;
+  }
+  &__slides li{
+    display: inline-block;
+    &:not(:last-child){
+      padding-right: 54px;
+    }
+  }
 }
 
 .courses{
@@ -435,9 +458,9 @@ body{
     width: 205px;
     height: 39px;
     &:not(:last-child){
-     margin-bottom: 17px;
-   }
- }
+      margin-bottom: 17px;
+    }
+  }
 }
 
 .feedback{
@@ -467,44 +490,44 @@ body{
   max-width: 50%;
   float: left;
   &:not(:last-child){
-   padding-right: 68px;
- }
- &__text{
-  padding: 37px 83px 39px 41px;
-  font-size: 14px;
-  border-radius: 25px;
-  background-color: #f7f7f7;
-  @media (max-width: $xlg){
-    min-height: 244px;
+    padding-right: 68px;
   }
-  @media (max-width: $lg){
-    min-height: 269px;
+  &__text{
+    padding: 37px 83px 39px 41px;
+    font-size: 14px;
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    @media (max-width: $xlg){
+      min-height: 244px;
+    }
+    @media (max-width: $lg){
+      min-height: 269px;
+    }
+    @media (max-width: $md){
+      min-height: 388px;
+    }
   }
-  @media (max-width: $md){
-    min-height: 388px;
+  &__heading{
+    line-height: 24px;
+    padding-bottom: 35px;
   }
-}
-&__heading{
-  line-height: 24px;
-  padding-bottom: 35px;
-}
-&__descr{
-  text-decoration: underline;
-  color: #656565;
-}
-&__triangle{
-  position: relative;
-  bottom: 47px;
-  left: 34px;
-}
-&__image{
-  box-shadow: 0 18px 36px 2px rgba(254, 96, 159, 0.3);
-  border-radius: 100px;
-  position: relative;
-  right: 45px;
-  top: 46px;
-  max-width: 70px;
-}
+  &__descr{
+    text-decoration: underline;
+    color: #656565;
+  }
+  &__triangle{
+    position: relative;
+    bottom: 47px;
+    left: 34px;
+  }
+  &__image{
+    box-shadow: 0 18px 36px 2px rgba(254, 96, 159, 0.3);
+    border-radius: 100px;
+    position: relative;
+    right: 45px;
+    top: 46px;
+    max-width: 70px;
+  }
 }
 
 .faq{
@@ -527,32 +550,32 @@ body{
   padding-left: 30px;
   cursor: pointer;
   &:not(.question-active):hover{
-   color: #fe609f;
- }
- &:hover .question__arrow{
-  display: block;
-}
-&-active{
- padding: 29px 88px 30px 35px;
- border-radius: 8px;
- background-color: #1e1e1e;
-}
-&:not(:nth-child(6n)){
- margin-bottom: 35px;
-}
-&__heading{
-  padding-bottom: 21px;
-}
-&__arrow{
-  float: right;
-  padding-right: 5px;
-  display: none;
+    color: #fe609f;
+  }
+  &:hover .question__arrow{
+    display: block;
+  }
+  &-active{
+    padding: 29px 88px 30px 35px;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+  }
+  &:not(:nth-child(6n)){
+    margin-bottom: 35px;
+  }
+  &__heading{
+    padding-bottom: 21px;
+  }
+  &__arrow{
+    float: right;
+    padding-right: 5px;
+    display: none;
 
-}
-&__descr{
-  font-size: 14px;
-  line-height: 24px;
-}
+  }
+  &__descr{
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 .advice{
@@ -574,6 +597,7 @@ body{
     float: left;
   }
 }
+
 .guideline{
   padding-top: 139px;
   &__heading{
@@ -649,5 +673,127 @@ body{
     position: absolute;
     top: 50px;
     right: 50px;
+  }
+  &__coach{
+    position: absolute;
+    left: 15%;
+    p{
+      text-align: center;
+    }
+    img{
+      max-width: 295px;
+    }
+    &-2{
+      top: 570px;
+    }
+  }
+}
+
+.discount{
+  padding: 262px 0 271px;
+  &__heading{
+    font-size: 26px;
+    float: left;
+    padding: 0 156px 57px 0;
+  }
+  &__descr{
+    font-size: 14px;
+    line-height: 23px;
+    color: #bbbbbb;
+    float: left;
+  }
+  form{
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  input{
+    border: 1px solid #464646;
+    border-radius: 5px;
+    background-color: black;
+    width: 327px;
+    height: 45px;
+    padding-left: 24px;
+    color: #fff;
+    padding-top: 3px;
+    &:focus{
+      outline-color:#fe609f;
+    }
+  }
+
+  &__button{
+    width: 697px;
+    height: 56px;
+    background-color: #fe609f;
+    box-shadow: 0 5px 34px 1px rgba(254, 96, 159, 0.29);
+    font-size: 18px;
+    color: #ffffff;
+  }
+  .first{
+    margin-right: 42px;
+    margin-bottom: 27px;
+  }
+  .second{
+    margin-bottom: 27px;
+  }
+  .third{
+    margin-right: 42px;
+    margin-bottom: 45px;
+  }
+  .fourth{
+    margin-bottom: 45px;
+  }
+
+}
+
+//TODO pereverstat' ety huety
+.partnership{
+  max-width: 1070px;
+  margin: 0 auto;
+  &__heading{
+    font-size: 26px;
+    padding-bottom: 24px;
+  }
+  &__descr{
+    font-size: 14px;
+    color: #bbbbbb;
+    font-size: 14px;
+    line-height: 23px;
+    p{
+      max-width: 515px;
+      float: left;
+      padding-bottom: 63px;
+      &:first-child{
+        width: 402px;
+        margin-right: 153px;
+      }
+    }
+    span{
+      font-size: 38px;
+      padding: 0 13px;
+    }
+  }
+  &__item{
+    overflow: hidden;
+  }
+  &__img{
+    float: left;
+    overflow: hidden;
+    &:not(:last-child){
+      margin-right: 155px;
+    }
+    img{
+      padding-bottom: 14px;
+    }
+    p{
+      color: #bbbbbb;
+      font-size: 14px;
+    }
+  }
+  &__button{
+    background-color: #fe609f;
+    width: 252px;
+    height: 45px;
+    color: #ffffff;
+    margin-top: 76px;
   }
 }
