@@ -3,7 +3,7 @@ feedback IMG+SHADOWS
 all div with text => paragraph
 check box-shadows
 active button
-
+favicon
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ active button
         <nav class="header__menu">
           <ul>
             <li>Главная</li>
-            <li><a href="about-popup.html">О проекте</a></li>
+            <li><a class="popup__about" href="about-popup.html" data-effect="mfp-zoom-in">О проекте</a></li>
             <li>Для кого</li>
             <li>Программы</li>
             <li>Результаты</li>
@@ -30,6 +30,9 @@ active button
           </ul>
         </nav>
         <a href="#" class="button header__button">Личный кабинет </a>
+        <div class="nav-bars mobileIcon">
+          <span></span>
+        </div>
       </div>
       <div class="entry">
         <p class="entry__heading">Здоровый<br>
@@ -105,7 +108,8 @@ active button
   </div>
   <div class="block block-parallax block-parallax1"></div><div></div>
   <div class="block block-personal">
-    <div class="wrapper">
+    <div class="wrapper wrap-personal">
+
       <img class="block-personal-item" src="img/tablet.png" alt="">
       <div class="block-personal-item personal">
         <p class="personal__heading">Личный кабинет</p>
@@ -300,9 +304,9 @@ active button
   <div class="block block-feedback">
     <div class="wrapper">
       <div class="feedback">
-        <div class="feedback__heading">Отзывы</div>
-        <div class="feedback__descr">С нами тренируется более 13 000 девушек.<br>
-        Они решили стать лучше и сделали это. Присоединяйся.</div>
+        <p class="feedback__heading">Отзывы</p>
+        <p class="feedback__descr">С нами тренируется более 13 000 девушек.<br>
+        Они решили стать лучше и сделали это. Присоединяйся.</p>
         <div class="feedback__items">
           <div class="review">
             <div class="review__text">
@@ -340,80 +344,80 @@ active button
         <div class="faq__items">
           <div class="faq__col">
             <div class="question question-active">
-              <div class="question__heading">Можно ли изменять выбранный план питания?
-              </div>
-              <div class="question__descr">
+              <p class="question__heading">Можно ли изменять выбранный план питания?
+              </p>
+              <p class="question__descr">
                 Мы рекомендуем придерживаться плана питания,так как это влияет
                 на результат. Но всегда готовы проконсультировать по замене продуктов
                 в чате Telegram.
-              </div>
+              </p>
             </div>
             <div class="question">
-              <div class="question__heading">Есть ли в программе меню для вегетарианцев?
+              <p class="question__heading">Есть ли в программе меню для вегетарианцев?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Можно ли тренироваться, если есть ограничения по здоровью?
+              <p class="question__heading">Можно ли тренироваться, если есть ограничения по здоровью?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Сколько тренировок проводится в неделю? Какое расписание?
+              <p class="question__heading">Сколько тренировок проводится в неделю? Какое расписание?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Сколько длится тренировка?
+              <p class="question__heading">Сколько длится тренировка?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Можно ли набрать мышечную массу тренируясь с вами?
+              <p class="question__heading">Можно ли набрать мышечную массу тренируясь с вами?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
           </div>
           <div class="faq__col">
             <div class="question">
-              <div class="question__heading">Что нужно для начала тренировок?
+              <p class="question__heading">Что нужно для начала тренировок?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Можно ли заморозить мой курс тренировок?
+              <p class="question__heading">Можно ли заморозить мой курс тренировок?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Какие есть ограничения по возрасту?
+              <p class="question__heading">Какие есть ограничения по возрасту?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Я не из России. Могу ли я тренироваться с вами?
+              <p class="question__heading">Я не из России. Могу ли я тренироваться с вами?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Через какое время ждать результата?
+              <p class="question__heading">Через какое время ждать результата?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
             <div class="question">
-              <div class="question__heading">Как оплатить курс?
+              <p class="question__heading">Как оплатить курс?
                 <img class="question__arrow" src="img/arrow.svg" alt="">
-              </div>
+              </p>
               <div class="question__descr"></div>
             </div>
           </div>
@@ -424,10 +428,10 @@ active button
   <div class="block block-advice">
     <div class="wrapper">
       <div class="advice">
-        <div class="advice__heading">Рекомендации</div>
+        <p class="advice__heading">Рекомендации</p>
         <img src="img/advice-img.jpg" alt="" class="advice__img">
         <div class="advice__text guideline">
-          <div class="guideline__heading">Рекомендация от Анастасии</div>
+          <p class="guideline__heading">Рекомендация от Анастасии</p>
           <p class="guideline__descr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
             sed diam nonummy nibh euismod tincidunt ut laoreet dolore
             magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
@@ -441,7 +445,7 @@ active button
   <div class="block block-partner">
     <div class="wrapper">
       <div class="partners">
-        <div class="partners__heading">Партнеры</div>
+        <p class="partners__heading">Партнеры</p>
         <div class="partners__row">
           <img class="partners__img" src="img/oralb.svg" alt="">
           <img class="partners__img" src="img/oralb.svg" alt="">
@@ -469,5 +473,35 @@ active button
         </footer>
       </div>
     </div>
+
+<!--POPUPS -->
+<div class="block block-about" style="display:none">
+  <div class="wrapper">
+    <div class="about">
+      <img src="img/close.png" alt="" class="about__close mfp-close">
+      <div class="about__heading">О проекте</div>
+      <div class="about__descr">Привет. Меня зовут Анастасия Миронова, приятно познакомиться.
+        Я автор онлайн-тренировок «Школы совершенного тела» и владелец
+        студии групповых тренировок «Булочная у Мироновой» в Санкт-Петербурге.
+        <br><br>
+        История моих проектов началась с желания стать лучше и полюбить себя.
+        После очередного отпуска с пиццей и сладостями, пришло осознание —
+        нужно менять привычный образ жизни в пользу здорового.
+        <br><br>
+        Так я начала 2-х летний путь от увлечения к профессии: тренировалась дома
+        и в зале, боролась с желанием опустить руки, пробовала различные системы
+        питания и мотивировалась результатами. Параллельно делилась советами
+        и мыслями с подписчиками в Instagram.
+      </div>
+      <a href="#" class="about__link">
+        Подробнее
+      </div>
+    </div>
+  </div>
+<!--POPUPS -->
+
+
+    <script src="js/libs.js"></script>
+    <script src="js/app.js"></script>
   </body>
   </html>
