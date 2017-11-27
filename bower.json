@@ -17,6 +17,7 @@
   "dependencies": {
     "reset-css": "^2.2.1",
     "jquery": "^3.2.1",
-    "magnific-popup": "^1.1.0"
+    "magnific-popup": "^1.1.0",
+    "parallax.js": "^1.5.0"
   }
 }
