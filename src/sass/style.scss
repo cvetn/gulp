@@ -1,7 +1,7 @@
 @import 'bower_components/reset-css/_reset';
 @import '_fonts.scss';
 
-$xs: 450px;
+$xs: 550px;
 $sm: 768px;
 $md: 992px;
 $lg: 1200px;
@@ -40,7 +40,7 @@ body{
     width: 970px;
   }
   @media (max-width: $md) {
-    width: 750px;
+    width: 550px;
   }
   @media (max-width: $xs) {
     width: 350px;
@@ -119,14 +119,23 @@ body{
   &-about{
     background-image: url(../img/backg-about.jpg);
     background-position-x: -280px;
-        background-color: black;
-        color: #fff;
+    background-color: black;
+    color: #fff;
+    @media (max-width: $lg){
+      background-position: -390px;
+    }
+    @media (max-width: $md){
+      background-image: none;
+    }
+
   }
   &-discount{
     background-color: #000;
     color: #fff;
   }
   &-partnership{
+    background-color: #000;
+    color: #fff;
     padding: 85px 0;
   }
   &-courses{
@@ -139,6 +148,10 @@ body{
   }
   &-partner{
     background-color: #000;
+    color: #fff;
+  }
+  &-form{
+    background: #000;
     color: #fff;
   }
 }
@@ -174,7 +187,7 @@ body{
     @media (max-width: $lg) {
       padding-right: 47px;
     }
-    @media (max-width: $xs) {
+    @media (max-width: $md) {
       clear: both;
       width: 100%;
       text-align: center;
@@ -200,14 +213,13 @@ body{
     width: 164px;
     height: 39px;
     float: left;
-    padding:12px 22px;
+    padding:13px 23px;
     @media (max-width: $xs) {
       width: 110px;
       position: absolute;
       right: 65px;
       padding: 12px 2px;
     }
-
   }
 }
 
@@ -222,7 +234,8 @@ body{
     padding: 150px 0px 228px 480px;
   }
   @media (max-width: $md) {
-    padding: 150px 140px 228px 30px;
+    padding: 150px 0px 228px 190px;
+    // padding: 150px 140px 228px 30px;
   }
   @media (max-width: $sm) {
     padding: 830px 150px 130px 120px;
@@ -346,7 +359,7 @@ body{
   @media (max-width: $xlg) {
     max-width: 28%;
   }
-  @media (max-width: $xs) {
+  @media (max-width: $md) {
     float: none;
     max-width: 100%;
     margin-right: 0 !important;
@@ -668,6 +681,7 @@ body{
       padding-right: 88px;
       @media (max-width: $xs){
         padding-right: 0;
+        margin-bottom: 35px;
       }
     }
   }
@@ -675,6 +689,7 @@ body{
 
 .question{
   padding-left: 30px;
+    transition: all .5s;
   cursor: pointer;
   &:not(.question-active):hover{
     color: #fe609f;
@@ -687,6 +702,7 @@ body{
     border-radius: 8px;
     background-color: #1e1e1e;
     margin-top: -29px;
+    transition: all .5s;
     .question__descr{
       display: block;
     }
@@ -783,13 +799,27 @@ body{
   & p{
     display: inline-block;
     min-width: 33%;
+    @media (max-width: $lg){
+      min-width: 32%;
+    }
+    @media (max-width: $xs){
+      min-width: 42%;
+    }
   }
   &__copy{
     text-align: center;
+    @media (max-width: $xs){
+      min-width: 10% !important;
+    }
     & img{
       position: relative;
       top: 8px;
       right: 13px;
+    }
+    span{
+      @media (max-width: $md){
+        display: none;
+      }
     }
   }
   &__email{
@@ -801,6 +831,13 @@ body{
   padding: 196px 159px 192px 708px;
   @media (max-width: $xlg) {
     padding: 196px 9px 192px 528px;
+  }
+  @media (max-width: $lg) {
+    padding: 196px 9px 192px 408px;
+  }
+  @media (max-width: $md) {
+    padding: 196px 0px 192px 0px;
+    // padding: 196px 9px 192px 58px;
   }
   &__heading{
     font-size: 38px;
@@ -837,20 +874,39 @@ body{
 
 .discount{
   padding: 262px 0 271px;
+  @media (max-width: $md){
+    padding: 102px 0 271px;
+  }
   &__heading{
     font-size: 26px;
     float: left;
     padding: 0 156px 57px 0;
+    @media (max-width: $md){
+      float: none;
+      padding-right: 0
+    }
   }
   &__descr{
     font-size: 14px;
     line-height: 23px;
     color: #bbbbbb;
     float: left;
+    @media (max-width: $md){
+      float: none;
+      padding-bottom: 15px;
+    }
   }
   form{
     max-width: 700px;
     margin: 0 auto;
+    @media (max-width: $sm){
+      max-width: 460px;
+    }
+    @media (max-width: $xs){
+      max-width: 300px;
+
+    }
+
   }
   input{
     border: 1px solid #464646;
@@ -864,6 +920,13 @@ body{
     &:focus{
       outline-color:#fe609f;
     }
+    @media (max-width: $md){
+      display: block;
+      width: 457px;
+    }
+    @media (max-width: $xs){
+      width: 260px;
+    }
   }
 
   &__button{
@@ -873,6 +936,12 @@ body{
     box-shadow: 0 5px 34px 1px rgba(254, 96, 159, 0.29);
     font-size: 18px;
     color: #ffffff;
+    @media (max-width: $md){
+      width: 457px;
+    }
+    @media (max-width: $xs){
+      width: 260px;
+    }
   }
   .first{
     margin-right: 42px;
@@ -884,22 +953,28 @@ body{
   .third{
     margin-right: 42px;
     margin-bottom: 45px;
+    @media (max-width: $md){
+      margin-bottom: 27px;
+    }
   }
   .fourth{
     margin-bottom: 45px;
   }
-
 }
 
-//TODO pereverstat' ety huety
+//TODO pereverstat' etot kal
 .partnership{
   max-width: 1070px;
   margin: 0 auto;
+  @media (max-width: $sm){
+    max-width: 405px;
+  }
   &__heading{
     font-size: 26px;
     padding-bottom: 24px;
   }
   &__descr{
+    overflow: hidden;
     font-size: 14px;
     color: #bbbbbb;
     font-size: 14px;
@@ -911,6 +986,9 @@ body{
       &:first-child{
         width: 402px;
         margin-right: 153px;
+      }
+      @media (max-width: $lg){
+        max-width: 355px;
       }
     }
     span{
@@ -926,9 +1004,16 @@ body{
     overflow: hidden;
     &:not(:last-child){
       margin-right: 155px;
+      @media (max-width: $lg){
+        margin-right: 95px;
+      }
     }
     img{
       padding-bottom: 14px;
+      @media (max-width: $sm){
+            max-width: 290px;
+      }
+
     }
     p{
       color: #bbbbbb;
@@ -952,7 +1037,7 @@ body{
   width: 30px;
   height: 30px;
   display: none;
-  @media (max-width: $xs){
+  @media (max-width: $md){
     position: absolute;
     top: 15px;
     right: 25px;
@@ -1009,42 +1094,48 @@ body{
 
 #small-dialog {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  display: none;
+}
+.mfp-wrap{
+  opacity: 0;
+  transition: opacity 1s;
+  background-color: #000;
 }
 
 /**
- * Fade-zoom animation for first dialog
- */
+* Fade-zoom animation for first dialog
+*/
 
 /* start state */
 .my-mfp-zoom-in .zoom-anim-dialog {
-	opacity: 0;
-	transition: all 0.2s ease-in-out;
-	transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8);
 }
 
 /* animate in */
 .my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
-	opacity: 1;
-	transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* animate out */
 .my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
-	transform: scale(0.8);
-	opacity: 0;
+  transform: scale(0.8);
+  opacity: 0;
 }
 
 /* Dark overlay, start state */
 .my-mfp-zoom-in.mfp-bg {
-	opacity: 0;
-	transition: opacity 0.3s ease-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 /* animate in */
 .my-mfp-zoom-in.mfp-ready.mfp-bg {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 /* animate out */
 .my-mfp-zoom-in.mfp-removing.mfp-bg {
-	opacity: 0;
+  opacity: 0;
 }

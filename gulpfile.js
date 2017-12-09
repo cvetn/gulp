@@ -44,6 +44,8 @@ gulp.task('fonts', function () {
   }));
 });
 
+
+
 gulp.task('jslibs', function () {
   var filterJS = gulpFilter('**/*.js', { restore: true });
   return gulp.src('./bower.json')
@@ -51,11 +53,14 @@ gulp.task('jslibs', function () {
   .pipe(filterJS)
   .pipe(concat('libs.js'))
   //.pipe(uglify())
+
   .pipe(gulp.dest('prod/js'))
   .pipe(browserSync.reload({
     stream: true
   }));
 });
+
+
 
 gulp.task('appjs', () => {
    return  gulp.src('src/js/*')

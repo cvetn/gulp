@@ -8,26 +8,48 @@ $(function() {
 
 //popup fullscreen
 $('.popup-with-zoom-anim').click(()=>{
-    $('body').css({'height':'100vh','overflow':'hidden'})
-    $('#small-dialog').css('display','block')
+    $('#small-dialog').css({
+        'display':'block'
+    });
+    var popupLength = $('#small-dialog').css('height');
+    $('body').css({
+      'height':  popupLength,
+      'overflow':'hidden',
+      'background-color':'#000'
+    })
+
+    function trans(){
+      $('.mfp-wrap').css({'opacity':'1'});
+    }
+    setTimeout(trans,1)
+
 })
 //close popup
 $('.about__close').click(()=>{
-    $('body').css({'height':'auto','overflow':'auto'})
+    $('body').css({'height':'auto','overflow':'auto','background-color':'#fff'})
+    $('#small-dialog').css({
+        'display':'none'
+    });
+
 })
 //popup plugin
+// $('.popup').magnificPopup({
+//   type: 'inline',
+//   fixedContentPos: false,
+//   fixedBgPos: true,
+//   overflowY: 'hidden',
+//   closeBtnInside: true,
+//   preloader: false,
+//   midClick: true,
+//   removalDelay: 300,
+//   mainClass: 'my-mfp-zoom-in'
+// });
 $('.popup-with-zoom-anim').magnificPopup({
   type: 'inline',
-  fixedContentPos: false,
-  fixedBgPos: true,
-  overflowY: 'hidden',
-  closeBtnInside: true,
   preloader: false,
-  midClick: true,
-  removalDelay: 300,
-  mainClass: 'my-mfp-zoom-in'
+  closeBtnInside: true,
+  modal: true
 });
-
 
 //scroll to anchor from top nav
 $("a.scrollLink").click(function () {
@@ -39,6 +61,7 @@ $("a.scrollLink").click(function () {
 //faq items
 $('.question').click(function() {
   $(this).toggleClass('question-active');
+  $('.question').not(this).removeClass('question-active');
 });
 //parallax
 $('.block-parallax1').parallax({imageSrc: '/img/parallax.jpg'});
