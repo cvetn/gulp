@@ -69,4 +69,61 @@ $('.block-parallax2').parallax({imageSrc: '/img/parallax2.jpg'});
 $('.block-parallax3').parallax({imageSrc: '/img/parallax3.jpg'});
 
 
+// Sliders
+    //intros slider
+  var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    // effect: 'fade',
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+       type: 'progressbar',
+    },
+  });
+  //reviews slider
+  var swiper2 = new Swiper('.swiper-container2', {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    loop: true,
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'progressbar',
+    },
+    breakpoints: {
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      }
+    }
+  });
+  //tablet slider
+  var swiper3 = new Swiper('.swiper-container3', {
+    spaceBetween: 140,
+    loop: true,
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+   type: 'progressbar',
+    },
+
+  });
+
+
+
+
 });

@@ -1,5 +1,6 @@
 @import 'bower_components/reset-css/_reset';
 @import '_fonts.scss';
+@import 'bower_components/swiper/dist/css/swiper.min';
 
 $xs: 550px;
 $sm: 768px;
@@ -70,14 +71,28 @@ body{
     }
 
   }
-  &-slider{
+  &-slider1{
     background-color: #000;
     color: #fff;
     background-image: url(../img/slide1.jpg);
+    @media (max-width: $md) {
+      background-position: -80px 400px
+    }
     @media (max-width: $xs) {
-      background-position: -210px 400px;
+      background-position: -210px 450px;
     }
 
+  }
+  &-slider2{
+    background-color: #000;
+    color: #fff;
+    background-image: url(../img/slide2.jpg);
+    @media (max-width: $md) {
+      background-position: -210px 400px;
+    }
+    @media (max-width: $xs) {
+      background-position: -210px 450px;
+    }
   }
   &-parallax{
     height: 366px;
@@ -92,24 +107,29 @@ body{
     background-color: #000;
     color: #fff;
     overflow: hidden;
-    padding: 200px 0 200px 57px;
-    @media (max-width: $xs) {
-      padding: 50px 0 200px 0px;
+    padding: 200px 0 200px 0;
+    @media (max-width: $md){
+      padding: 200px 0 600px 0;
     }
-
+    @media (max-width: $xs) {
+      padding: 50px 0 500px 0px;
+    }
     &-item{
       float: left;
       padding-right: 75px;
       @media (max-width: $xlg) {
         padding-right: 49px;
-        max-width: 61%;
+        // max-width: 61%;
       }
       @media (max-width: $lg) {
-        max-width: 48%;
+        // max-width: 63%;
       }
-      @media (max-width: $xs) {
+      @media (max-width: $md) {
+        float: none;
+        padding-right: 0;
         max-width: 100%;
       }
+
     }
   }
   &-footer{
@@ -305,14 +325,20 @@ body{
     padding: 320px  213px 99px 852px;
   }
   @media (max-width: $md){
-    padding: 315px 3px 99px 30px;
-  }
-  @media (max-width: $xs){
     padding: 86px 0px 675px 0px;
   }
-
-
-
+  @media (max-width: $xs){
+    padding: 86px 0px 725px 0px;
+  }
+  &2{
+    padding: 292px 123px 99px 662px;
+    @media (max-width: $lg){
+      padding-top: 287px;
+    }
+    @media (min-width: $xlg){
+      padding-top: 292px;
+    }
+  }
   &__heading{
     font-size: 38px;
     line-height: 55px;
@@ -387,6 +413,14 @@ body{
 }
 .personal{
   max-width: 422px;
+  @media (max-width: $xlg){
+    max-width: 30%;
+    padding-right: 0;
+  }
+  @media (max-width: $lg){
+    max-width: 37%;
+    padding-right: 0;
+  }
   &__heading{
     font-size: 38px;
     padding-bottom: 45px;
@@ -405,6 +439,9 @@ body{
     display: inline-block;
     &:not(:last-child){
       padding-right: 54px;
+      @media (max-width: $xs){
+        padding-right: 34px;
+      }
     }
   }
 }
@@ -615,15 +652,16 @@ body{
   }
   &__items{
     overflow: hidden;
-    padding-bottom: 95px;
   }
 }
 
 .review{
-  max-width: 50%;
-  float: left;
+  padding-bottom: 200px;
   &:not(:last-child){
     padding-right: 68px;
+    @media (max-width: $md){
+      padding-right: 0;
+    }
   }
   &__text{
     padding: 37px 83px 39px 41px;
@@ -1138,4 +1176,90 @@ body{
 /* animate out */
 .my-mfp-zoom-in.mfp-removing.mfp-bg {
   opacity: 0;
+}
+
+
+// slider
+.swiper-container-horizontal > .swiper-pagination-progressbar{
+  width: 16%;
+  height: 4px;
+  left: 715px;
+  top: 610px;
+  @media (max-width: $md){
+    width: 46%;
+    height: 4px;
+    left: 185px;
+    top: 340px;
+  }
+  @media (max-width: $sm){
+    width: 56%;
+    height: 4px;
+    left: 135px;
+    top: 330px;
+  }
+  @media (max-width: $xs){
+    width: 56%;
+    height: 4px;
+    left: 105px;
+    top: 430px;
+  }
+}
+.feedback__items .swiper-container-horizontal > .swiper-pagination-progressbar{
+  width: 100%;
+    height: 4px;
+    left: 0px;
+    top: 500px;
+    position: initial;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background: #fe609f;
+}
+.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill{
+  background: #fe609f;
+}
+.swiper-container2{
+  width: 100%;
+}
+.swiper-container3{
+  float: left;
+  max-width: 60%;
+  overflow: hidden;
+  @media (max-width: $xlg){
+    margin-right: 25px;
+  }
+  @media (max-width: $md){
+    position: absolute;
+    top: 6132px;
+    max-width: 91%;
+    left: 100px;
+  }
+  @media (max-width: $sm){
+    max-width: 100%;
+    left: -19px;
+  }
+  @media (max-width: $xs){
+    top: 6182px;
+  }
+  img{
+    max-width: 111%;
+  }
+
+}
+
+// .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+//     bottom: 10px;
+//     left: 0;
+//     position: absolute;
+//     width: 100%;
+//     top: 4395px;
+//     left: 290px;
+// }
+.swiper-container3 .swiper-pagination.swiper-pagination-progressbar{
+  bottom: 10px;
+  left: 0;
+  position: absolute;
+  width: 50%;
+  top: 4395px;
+  left: 290px;
 }
