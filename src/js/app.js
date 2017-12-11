@@ -75,16 +75,16 @@ $('.block-parallax3').parallax({imageSrc: '/img/parallax3.jpg'});
     spaceBetween: 0,
     centeredSlides: true,
     loop: true,
-    // effect: 'fade',
+
     // autoplay: {
     //   delay: 2500,
     //   disableOnInteraction: false,
     // },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-       type: 'progressbar',
-    },
+    // pagination: {
+    //   el: '.swiper-pagination',
+    //   clickable: true,
+    //    type: 'progressbar',
+    // },
   });
   //reviews slider
   var swiper2 = new Swiper('.swiper-container2', {
@@ -118,11 +118,38 @@ $('.block-parallax3').parallax({imageSrc: '/img/parallax3.jpg'});
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-   type: 'progressbar',
+
     },
 
   });
+  //
+//   var ml = $('.wrapper').css('margin-left')
+//
+//   var pl = $('.wrapper').css('padding-left')
+//
+//   var pl2 = $('.slider').css('padding-left')
+//
+// var res = parseInt(ml, 10)+parseInt(pl, 10)+parseInt(pl2, 10);
+// $('.swiper-container .swiper-pagination').css('left',res)
 
+
+$(".swiper-pagination-bullet:nth-child(1)").text('Тренировки')
+$(".swiper-pagination-bullet:nth-child(2)").text('Питание')
+$(".swiper-pagination-bullet:nth-child(3)").text('Отчеты')
+
+var elem = document.querySelector('.personal__descr')
+var posright = document.documentElement.clientWidth - Math.floor(elem.getBoundingClientRect().right)-100;
+$('.swiper-pagination').css({
+  'left':'auto',
+  'right': posright
+})
+
+
+$('.choose__button').click(function() {
+  $that=$(this);
+  $that.addClass('button-active');
+  $that.siblings().removeClass('button-active')
+})
 
 
 
