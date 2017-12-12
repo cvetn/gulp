@@ -196,7 +196,13 @@ body{
 }
 
 .header{
-  padding-top: 35px;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  z-index: 999;
+  padding: 15px 0 15px 25px;
   overflow: hidden;
   font-size: 15px;
   font-weight: 300;
@@ -269,23 +275,23 @@ body{
 
 .entry{
 
-  padding:150px 270px 228px 740px;
+  padding:240px 270px 228px 740px;
 
   @media (max-width: $xlg) {
-    padding: 150px 140px 228px 590px;
+    padding: 240px 140px 228px 590px;
   }
   @media (max-width: $lg) {
-    padding: 150px 0px 228px 480px;
+    padding: 240px 0px 228px 480px;
   }
   @media (max-width: $md) {
-    padding: 150px 0px 228px 190px;
+    padding: 240px 0px 228px 190px;
     // padding: 150px 140px 228px 30px;
   }
   @media (max-width: $sm) {
-    padding: 830px 150px 130px 120px;
+    padding: 940px 150px 130px 120px;
   }
   @media (max-width: $xs) {
-    padding: 890px 0px 130px 0px;
+    padding: 940px 0px 130px 0px;
   }
 
 
@@ -507,6 +513,12 @@ body{
     font-size: 17px;
     color: #bbbbbb;
     padding-bottom: 69px;
+  }
+  &__footer{
+    a{
+      font-size: 22px;
+      color: #fe609f;
+    }
   }
 }
 

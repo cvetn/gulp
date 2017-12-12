@@ -12,6 +12,8 @@ del = require('del'),
 uglify = require('gulp-uglify'),
 babel = require('gulp-babel'),
 plumber = require('gulp-plumber'),
+streamqueue = require('streamqueue'),
+rename = require("gulp-rename"),
 gulpFilter = require('gulp-filter');
 
 gulp.task('sass', function () {
@@ -46,21 +48,40 @@ gulp.task('fonts', function () {
 
 
 
+// gulp.task('jslibs', function () {
+//   var filterJS = gulpFilter('**/*.js', { restore: true });
+//   return gulp.src('./bower.json')
+//   .pipe(mainBowerFiles())
+//   .pipe(filterJS)
+//   .pipe(concat('libs.js'))
+//   .pipe(uglify())
+//   //.pipe(rename({
+//   //    suffix: '.min'
+//   //}))
+//   .pipe(gulp.dest('prod/js'))
+//   .pipe(browserSync.reload({
+//     stream: true
+//   }));
+// });
 gulp.task('jslibs', function () {
   var filterJS = gulpFilter('**/*.js', { restore: true });
-  return gulp.src('./bower.json')
-  .pipe(mainBowerFiles())
-  .pipe(filterJS)
+  streamqueue(
+     { objectMode: true },
+     gulp.src('./bower.json').pipe(mainBowerFiles()).pipe(filterJS),
+     gulp.src('src/js/vendors/*.js')
+  )
   .pipe(concat('libs.js'))
   .pipe(uglify())
-  //.pipe(rename({
-  //    suffix: '.min'
-  //}))
+  .pipe(rename({
+     suffix: '.min'
+  }))
   .pipe(gulp.dest('prod/js'))
   .pipe(browserSync.reload({
     stream: true
   }));
 });
+
+
 
 
 

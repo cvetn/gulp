@@ -18,18 +18,18 @@ favicon
   <div class="block block-entry">
     <div class="wrapper">
       <div class="header">
-        <img class="header__logo" src="img/logomironova.svg" alt="">
+        <a class="scrollLink" href=".block-entry"><img class="header__logo" src="img/logomironova.svg" alt=""></a>
         <nav class="header__menu">
           <ul>
-            <li>Главная</li>
-            <li><a class="popup-with-zoom-anim fullscreenPop" href="#small-dialog">О проекте</a></li>
+            <li><a class="scrollLink" href=".block-courses">Программы</a></li>
             <li><a class="scrollLink" href=".block-slider2">Для кого</a></li>
-            <li><a class="scrollLink" href=".courses__heading">Программы</a></li>
-            <li><a class="scrollLink" href=".feedback__heading">Результаты</a></li>
-            <li><a class="scrollLink" href=".faq__heading">FAQ</a></li>
+            <li><a href="#">Конкурс</a></li>
+            <li><a class="popup-with-zoom-anim fullscreenPop" href="#small-dialog">О проекте</a></li>
+            <li><a class="scrollLink" href=".block-feedback">Результаты</a></li>
+            <li><a class="scrollLink" href=".block-faq">FAQ</a></li>
           </ul>
         </nav>
-        <a href="#" class="button header__button">Личный кабинет </a>
+        <a href="http://app.mirofs.ru/" class="button header__button">Личный кабинет </a>
         <div class="nav-bars mobileIcon">
           <span></span>
         </div>
@@ -216,7 +216,7 @@ favicon
         <div class="courses__content configurator">
           <div class="configurator__content ">
             <div class="choose">
-              <p class="choose__heading">Выберите курс </p>
+              <p class="choose__heading">Шаг 1. Выберите курс </p>
               <div class="choose__items choose-main">
                 <p class="button choose__button" id="booty">Красивые ягодицы</p>
                 <p class="button choose__button" id="abs">Идеальный пресс</p>
@@ -224,7 +224,7 @@ favicon
               </div>
             </div>
             <div class="choose">
-              <p class="choose__heading">Выберите уровень вашей подготовки</p>
+              <p class="choose__heading">Шаг 2. Выберите уровень вашей подготовки</p>
               <div class="choose__items choose-add">
                 <div class="button choose__button button-disabled" id="basic">
                   <p class="choose__button-heading">Базовый</p>
@@ -696,7 +696,7 @@ favicon
         <input class="third" name="phone" type="text" placeholder="Ваш телефон*">
         <input class="fourth" name="email" type="text" placeholder="Ваш email*">
         <div class="clearfix"></div>
-        <button class="button discount__button">Получить</button>
+        <button class="button discount__button">Получить промокод</button>
       </form>
     </div>
   </div>
@@ -708,7 +708,8 @@ favicon
       <!-- <img src="img/close.png" alt="" class="about__close"> -->
       <form action="discount.html" class="form discount__form">
         <div class="discount__heading">Заполните форму</div>
-        <div class="discount__descr">Заполните форму, чтобы перейти к оплате.<br>
+        <div class="discount__descr" style="float:none;">Заполните форму, чтобы перейти к оплате. <br>
+           Будьте внимательны при заполнении поля "Ваш email"
         </div>
         <div class="clearfix"></div>
         <input class="first" name="firstname" type="text" placeholder="Вашe имя">
@@ -719,7 +720,7 @@ favicon
         <input class="third" name="email" type="text" placeholder="Ваш email*">
         <input class="fourth" name="promo" type="text" placeholder="Промокод">
         <div class="clearfix"></div>
-        <button class="button discount__button">Оплатить</button>
+        <button class="button discount__button">Оплатить курс</button>
       </form>
     </div>
   </div>
@@ -728,9 +729,9 @@ favicon
 
 
 
-    <script src="js/libs.js"></script>
+    <script src="js/libs.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/jquery.fullscreen-popup.min.js"></script>
+    <!-- <script src="js/jquery.fullscreen-popup.min.js"></script> -->
 
   </body>
   </html>
