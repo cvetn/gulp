@@ -19,7 +19,11 @@ a{
 }
 body{
   font-family: 'Diaria Sans Pro', sans-serif;
+      @media(min-width: $sm){
+        overflow-y: scroll !important;
+      }
 }
+
 .button{
   border-radius: 10px;
   border: 1px solid #3d3d3d;
@@ -122,6 +126,7 @@ body{
     color: #fff;
     overflow: hidden;
     padding: 200px 0 200px 0;
+    position: relative;
     @media (max-width: $md){
       padding: 200px 0 740px 0;
     }
@@ -256,7 +261,8 @@ body{
       width: 110px;
       position: absolute;
       right: 65px;
-      padding: 12px 2px;
+      padding: 13px 10px;
+      font-size: 11px;
     }
   }
 }
@@ -357,7 +363,7 @@ body{
     padding: 86px 0px 675px 0px;
   }
   @media (max-width: $xs){
-    padding: 86px 0px 725px 0px;
+    padding: 16px 0px 725px 0px;
   }
   &2{
     padding: 222px 0px 284px 682px;
@@ -1193,7 +1199,7 @@ body{
 #small-dialog {
   width: 100vw;
   height: auto;
-  display: none;
+  display: block;
 }
 .mfp-wrap{
   opacity: 0;
@@ -1291,20 +1297,25 @@ body{
   }
   @media (max-width: $md){
     position: absolute;
-    top: 5862px;
+    // top: 5862px;
     max-width: 91%;
-    left: 100px;
+    // left: 100px;
     padding-top: 100px;
+
+    top: 595px;
+    left: 145px;
   }
   @media (max-width: $sm){
     max-width: 100%;
+    // left: -20px;
+    // top: 6536px;
     left: -20px;
-    top: 6536px;
   }
   @media (max-width: $xs){
     // // top: 6182px;
-  top: 6171px;
+  // top: 6171px;
         // top: 6544px;
+      left: -20px;
   }
   img{
     max-width: 111%;
@@ -1396,7 +1407,7 @@ body{
       top: -540px;
     }
     @media (max-width: $xs){
-      top: -380px;
+      top: -370px;
       width: 100%;
       left: 0;
     }
@@ -1453,4 +1464,21 @@ body{
       border-radius: 100%;
       background-color: #fe609f;
 
+}
+
+
+.fsp-content{
+  @media (max-width: $sm){
+      top: 80%!important;
+  }
+
+}
+.fsp-close{
+  right: 1em !important;
+  top: 0.5em !important;
+  font-size: 45px !important;
+  color: white;
+}
+.fsp-wrapper{
+  background: rgb(0, 0, 0) !important;
 }

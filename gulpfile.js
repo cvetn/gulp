@@ -52,8 +52,10 @@ gulp.task('jslibs', function () {
   .pipe(mainBowerFiles())
   .pipe(filterJS)
   .pipe(concat('libs.js'))
-  //.pipe(uglify())
-
+  .pipe(uglify())
+  //.pipe(rename({
+  //    suffix: '.min'
+  //}))
   .pipe(gulp.dest('prod/js'))
   .pipe(browserSync.reload({
     stream: true
