@@ -108,13 +108,14 @@ body{
     }
   }
   &-parallax{
-    height: 366px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @media (max-width: $xs) {
-      background-position: -250px 0;
-    }
+    min-height: 366px;
+    background: transparent;
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // @media (max-width: $xs) {
+    //   background-position: -250px 0;
+    // }
   }
   &-personal{
     background-color: #000;
@@ -200,7 +201,7 @@ body{
   @media (max-width: $xs) {
     padding-top: 15px;
     background: rgba(0,0,0,0.9);
-    margin: 0 -30px;
+    // margin: 0 -30px;
   }
 
   &__logo{
@@ -305,7 +306,7 @@ body{
 }
 
 .blockquote{
-  // padding: 164px 150px  246px 291px;
+  padding: 164px 150px  246px 291px;
   @media (max-width: $xlg) {
     padding: 54px 100px 126px 161px;
 
@@ -344,7 +345,7 @@ body{
 
 .slider{
   // padding: 320px 0px 99px 662px;
-  padding: 222px 0px 259px 662px;  
+  padding: 222px 0px 259px 662px;
   // padding: 320px 123px 99px 662px;
   @media (max-width: $lg){
     padding: 315px 3px 99px 582px;
@@ -366,6 +367,9 @@ body{
     }
     @media (min-width: $xlg){
       padding-top: 292px;
+    }
+    @media (max-width: $xs){
+      padding-bottom: 752px;
     }
   }
   &__heading{
@@ -845,6 +849,7 @@ body{
     @media (max-width: $xs){
       float: none;
       max-width: 100%;
+      padding-top: 39px;
     }
   }
 }
@@ -1279,25 +1284,27 @@ body{
 .swiper-container3{
   float: left;
   max-width: 60%;
+  padding-bottom: 100px;
   overflow: hidden;
   @media (max-width: $xlg){
     margin-right: 25px;
   }
   @media (max-width: $md){
     position: absolute;
-    top: 6032px;
+    top: 5862px;
     max-width: 91%;
     left: 100px;
     padding-top: 100px;
   }
   @media (max-width: $sm){
     max-width: 100%;
-    left: -19px;
-    top: 6816px;
+    left: -20px;
+    top: 6536px;
   }
   @media (max-width: $xs){
-    // top: 6182px;
-    top: 5872px;
+    // // top: 6182px;
+  top: 6171px;
+        // top: 6544px;
   }
   img{
     max-width: 111%;
@@ -1339,44 +1346,63 @@ body{
   }
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
-  color: #fff;
-  text-align: inherit;
-  bottom: -3329px;
-  width: 36%;
-  left: 825px;
-  @media (max-width: $xlg){
-    bottom: -3469px;
-    width: 36%;
-    left: 835px;
-  }
-  @media (max-width: $lg){
-    bottom: -3549px;
-    width: 35%;
-    left: 835px;
-  }
-  @media (max-width: $md){
-    bottom: 509px;
-    left: 160px !important;
-    width: 50%;
-  }
-  @media (max-width:$sm ){
-    bottom: 439px;
-    left: 130px !important;
-    width: 90%;
-    bottom: 456px;
+// .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+//   color: #fff;
+//   text-align: inherit;
+//   bottom: -3329px;
+//   width: 36%;
+//   left: 825px;
+//
+//   @media (max-width: $xlg){
+//     bottom: -3469px;
+//     width: 36%;
+//     left: 835px;
+//   }
+//   @media (max-width: $lg){
+//     bottom: -3549px;
+//     width: 35%;
+//     left: 835px;
+//   }
+//   @media (max-width: $md){
+//     bottom: 509px;
+//     left: 160px !important;
+//     width: 50%;
+//   }
+//   @media (max-width:$sm ){
+//     bottom: 439px;
+//     left: 130px !important;
+//     width: 90%;
+//     bottom: 456px;
+//
+//     left: 80px !important;
+//     width: 90%;
+//     bottom: 467px;
+//   }
+//   @media (max-width: $xs){
+//     left: 40px !important;
+//     width: 120%;
+//     bottom: 324px;
+//   }
+//
+// }
 
-    left: 80px !important;
-    width: 90%;
-    bottom: 467px;
-  }
-  @media (max-width: $xs){
-    left: 40px !important;
-    width: 120%;
-    bottom: 324px;
-  }
 
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+    position: relative;
+    top: 50px;
+    left: 70px;
+    width: 70%;
+    @media (max-width: $md){
+      top: -540px;
+    }
+    @media (max-width: $xs){
+      top: -380px;
+      width: 100%;
+      left: 0;
+    }
+///////////////////////////////////////
 }
+
 .swiper-pagination-bullet{
   width: 143px;
   // text-align: center;
