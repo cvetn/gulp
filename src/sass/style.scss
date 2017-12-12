@@ -305,9 +305,10 @@ body{
 }
 
 .blockquote{
-  padding: 164px 150px  246px 291px;
+  // padding: 164px 150px  246px 291px;
   @media (max-width: $xlg) {
-    padding: 164px 100px 246px 161px;
+    padding: 54px 100px 126px 161px;
+
   }
   @media (max-width: $xs) {
     padding: 40px 0px 68px 0px;
@@ -327,6 +328,9 @@ body{
     line-height: 54.25px;
     padding-top: 5px;
     padding-bottom: 90px;
+    @media (max-width: $sm){
+      text-align: center;
+    }
   }
   &__descr{
     font-size: 20px;
@@ -340,7 +344,7 @@ body{
 
 .slider{
   // padding: 320px 0px 99px 662px;
-  padding: 190px 0px 259px 662px;
+  padding: 222px 0px 259px 662px;  
   // padding: 320px 123px 99px 662px;
   @media (max-width: $lg){
     padding: 315px 3px 99px 582px;
@@ -355,7 +359,7 @@ body{
     padding: 86px 0px 725px 0px;
   }
   &2{
-    padding: 222px 0px 254px 682px;
+    padding: 222px 0px 284px 682px;
     // padding: 292px 123px 99px 662px;
     @media (max-width: $lg){
       padding-top: 287px;
@@ -373,7 +377,7 @@ body{
     font-size: 16px;
     line-height: 28px;
     color: #bbbbbb;
-    padding-bottom: 61px;
+    padding-bottom: 31px;
     @media (max-width: $xs){
       padding-bottom: 31px;
     }
@@ -381,7 +385,7 @@ body{
 }
 
 .advantages{
-  padding: 67px 0 203px 0;
+  padding: 67px 0 173px 0;
   @media (max-width: $xs) {
     padding-bottom: 0;
   }
@@ -389,7 +393,7 @@ body{
   &__heading{
     color: #cecece;
     font-size: 16px;
-    padding-bottom: 172px;
+    padding-bottom: 92px;
     @media (max-width: $xs) {
       padding-bottom: 62px;
     }
@@ -484,13 +488,13 @@ body{
   }
 }
 .courses{
-  padding: 190px 0 177px;
+  padding: 110px 0 97px;
   &__heading{
     font-size: 38px;
     padding-bottom: 19px;
   }
   &__descr{
-    font-size: 22px;
+    font-size: 17px;
     color: #bbbbbb;
     padding-bottom: 69px;
   }
@@ -560,7 +564,7 @@ body{
 
   &-main{
     overflow: hidden;
-    padding-bottom: 71px !important;
+    // padding-bottom: 71px !important;
     .choose__button{
       width: 256px;
       height: 45px;
@@ -588,7 +592,7 @@ body{
     font-size: 14px;
     float: left;
     width: 257px;
-    height: 218px;
+    height: 229px;
     padding: 27px 22px 0 21px;
     @media (max-width: $md){
       width: 100% !important;
@@ -675,7 +679,7 @@ body{
 }
 
 .feedback{
-  padding-top: 162px;
+  padding-top: 72px;
   padding-bottom: 150px;
   &__heading{
     font-size: 38px;
@@ -747,7 +751,7 @@ body{
 
 .faq{
   overflow: hidden;
-  padding: 165px 0 179px;
+  padding: 65px 0 89px;
   &__heading{
     font-size: 38px;
     padding-bottom: 44px;
@@ -808,11 +812,11 @@ body{
 
 .advice{
   overflow: hidden;
-  padding-bottom: 187px;
+  padding-bottom: 117px;
   padding-top: 45px;
   cursor: pointer;
   &:not(:last-child){
-    padding: 165px 0 0 0;
+    padding: 85px 0 0 0;
   }
   @media (max-width: $xs){
     padding: 85px 0 97px;
@@ -883,7 +887,7 @@ body{
 }
 
 .footer{
-  padding: 48px 0;
+  padding: 18px 0;
   & p{
     display: inline-block;
     min-width: 33%;
