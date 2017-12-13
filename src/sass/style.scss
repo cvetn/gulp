@@ -239,6 +239,11 @@ body{
       padding-right: 0;
       display: none;
     }
+    img{
+      max-width: 31px;
+      position: absolute;
+      top: 18px;
+    }
     li{
       display: inline-block;
       &:not(:last-child){
@@ -593,7 +598,6 @@ body{
       padding: 17px 110px 14px 20px;
       &:not(:last-child){
         margin-right: 19px;
-
       }
     }
     .choose__heading{
@@ -619,6 +623,10 @@ body{
     @media (max-width: $md){
       width: 100% !important;
     }
+    @media (max-width: $sm){
+      height: auto;
+      padding: 27px 22px 40px 21px;
+    }
     &:not(:last-child){
       margin-right: 19px;
       @media (max-width: $md){
@@ -636,6 +644,11 @@ body{
       line-height: 17px;
     }
   }
+  &-special{
+    .choose__button{
+      width: 188px;
+    }
+  }
 }
 
 .sidebar{
@@ -651,7 +664,7 @@ body{
       color: #d0d0d0;
       font-size: 12px;
       padding-bottom: 11px;
-      max-width: 193px;
+      max-width: 221px;
       line-height: 16px;
     }
     &1{
@@ -687,6 +700,7 @@ body{
     font-size: 12px;
     padding-bottom: 14px;
     text-align: center;
+    max-width: 205px;
   }
   &__button{
     padding: 12px 47px;
@@ -1001,6 +1015,12 @@ body{
       float: none;
       padding-right: 0
     }
+    &-feedback{
+      font-size: 35px;
+      float: none;
+      padding: 0 0 57px 0;
+      text-align: center;
+    }
   }
   &__descr{
     font-size: 14px;
@@ -1024,7 +1044,7 @@ body{
     }
 
   }
-  input{
+  input,textarea{
     border: 1px solid #464646;
     border-radius: 5px;
     background-color: black;
@@ -1043,6 +1063,13 @@ body{
     @media (max-width: $xs){
       width: 260px;
     }
+  }
+
+  textarea{
+    width: 698px;
+    height: 130px;
+    padding-top: 15px;
+    padding-right: 15px;
   }
 
   &__button{
@@ -1493,4 +1520,45 @@ body{
 }
 .fsp-wrapper{
   background: rgb(0, 0, 0) !important;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+
+.pay-mobile{
+   display: none;
+   @media (max-width: $xs){
+     display: block;
+     padding-top: 25px;
+   }
+   .pay__button{
+     width: auto;
+   }
+}
+
+.sidebar__item3-mobile{
+  display: none;
+  @media (max-width: $sm){
+    display: block;
+    padding-top: 25px;
+  }
 }

@@ -180,6 +180,9 @@ $(".swiper-pagination-bullet:nth-child(3)").text('Отчеты')
 // })
 
 
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+//<configurator>
+//'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 $('.choose__button').click(function () {
 
   var $this = $(this);
@@ -213,13 +216,160 @@ $('.choose__button').click(function () {
   var mainAdd = mainAdd.children('.button-active').attr('id') || '';
   var spec = spec.children('.button-active').attr('id') || '';
 
+  var currentCourse = `${mainId}${spec}`
+  console.log(currentCourse)
+
+  var sidebarData = {
+    booty : {
+      descr1 : {
+        heading : 'Красивые ягодицы',
+        ul : ['Идеальная форма ягодиц','Плоский живот','Красивые, стройные ноги','Тонус всех групп мышц','Подтянутый силуэт']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Авторскую программу тренировок на месяц','План питания на месяц','Чат с куратором и участниками проекта в Telegram',
+        'Чат с диетологом','Базу знаний о здоровом питании и тренировках','Комплекс растяжки в подарок']
+      },
+      price : '3000',
+      buttonHref : '#order1'
+    },
+
+    abs : {
+      descr1 : {
+        heading : 'Идеальный пресс',
+        ul : ['Красивый мышечный корсет','Идеальные пропорции тела','Коррекция проблемных зон','Уменьшение жировой прослойки','Тонус всего тела']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Авторскую программу тренировок на месяц','План питания на месяц','Чат с куратором и участниками проекта в Telegram',
+        'Чат с диетологом','Базу знаний о здоровом питании и тренировках','Комплекс растяжки в подарок']
+      },
+      price : '3000',
+      buttonHref : '#order1'
+    },
+
+    fit : {
+      descr1 : {
+        heading : 'Общее похудение',
+        ul : ['Похудение','Развитие выносливости ','Улучшение самочувствия ','Рельефное тело','Развитие всех групп мышц']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Авторскую программу тренировок на месяц','План питания на месяц','Чат с куратором и участниками проекта в Telegram',
+        'Чат с диетологом','Базу знаний о здоровом питании и тренировках','Комплекс растяжки в подарок']
+      },
+      price : '3000',
+      buttonHref : '#order1'
+    },
+
+    basic : {
+      buttonHref : '#order1'
+    },
+    advance : {
+      buttonHref : '#order1'
+    },
+    intensive : {
+      buttonHref : '#order1'
+    },
+
+    novice : {
+      descr1 : {
+        heading : 'Новичок',
+        ul : ['Поможет освоить технику выполнения упражнений','Познать азы правильного питания', 'Курс можно приобрести для участия в конкурсе']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Авторскую программу тренировок на месяц','Статью-рекомендацию по питанию',
+        'Чат с куратором и участниками проекта в Telegram','Базу знаний о здоровом питании и тренировках','Комплекс растяжки в подарок']
+      },
+      price : '2500',
+      buttonHref : '#order1'
+    },
+
+    individual : {
+      descr1 : {
+        heading : 'Индивидуальный',
+        ul : ['Подойдет при ограничениях по состоянию здоровья','Укажи все пожелания по курсу в анкете']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Индивидуальную программу тренировок на месяц','План питания на месяц','Чат с куратором и участниками проекта в Telegram',
+        'Чат с диетологом','Чат с Анастасией Мироновой', 'Базу знаний о здоровом питании и тренировках', 'Комплекс растяжки в подарок']
+      },
+      price : '8000',
+      buttonHref : '#order1'
+    },
+
+    anticel : {
+      descr1 : {
+        heading : 'Антицеллюлитный',
+        ul : ['Курс на все тело с упором на проблемные зоны','Незаменимый комплекс для любой девушки']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Авторскую программу тренировок на месяц','Специальный план питания на месяц',
+        'Набор рекомендаций по домашнему уходу за проблемными зонами тела','Чат с диетологом',
+        'Чат с куратором и участниками проекта в Telegram','Базу знаний с полезными статьями',
+        'Комплекс растяжки в подарок']
+      },
+      price : '3500',
+      buttonHref : '#order1'
+    },
+    stretch : {
+      descr1 : {
+        heading : 'Растяжка',
+        ul : ['Комплекс не привязан к личному кабинету','Уникальная программа для повышения гибкости тела','Улучшит осанку и защитит суставы от травм']
+      },
+      descr2 : {
+        heading : 'Курс включает:',
+        ul : ['Письмо с авторской программой по растяжке 2-ух уровней сложности','Видео и текстовое описание упражнений','Рекомендации по выполнению комплекса']
+      },
+      price : '3500',
+      buttonHref : '#order2'
+    }
+  }
 
 
-  var currentCourse = `${mainId}${mainAdd}${spec}`
-    console.log(currentCourse)
+  function renderSidebar(course){
+
+    var descr1Heading = $('.sidebar__item1 p'),
+        descr1Ul = $('.sidebar__item1 ul'),
+        descr2Heading = $('.sidebar__item2 p'),
+        descr2Ul = $('.sidebar__item2 ul'),
+        price = $('.sidebar__num'),
+        paymentButton = $('.pay__button-yandex');
+
+    descr1Heading.text( sidebarData[course].descr1.heading);
+    descr2Heading.text( sidebarData[course].descr2.heading);
+
+    var arrUl1 = sidebarData[course].descr1.ul.map((item)=> `<li class="animated fadeIn" > ${item}</li>`);
+    var arrUl2 = sidebarData[course].descr2.ul.map((item)=> `<li class="animated fadeIn" > ${item}</li>`);
+
+    descr1Ul.html(arrUl1);
+    descr2Ul.html(arrUl2);
+
+    price.text( sidebarData[course].price);
+    paymentButton.attr('href', sidebarData[course].buttonHref);
+
+    // if $this.parent().hasClass('choose-main'){
+    //   $('.sidebar__item3').hide();
+    // }
+
+  }
+
+  // window.renderSidebar = renderSidebar;
+
+  $this.parent().hasClass('choose-add') ? '' : renderSidebar(currentCourse);
 
 });
 
+
+
+
+
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+//   <configurator/>
+//'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
 });
