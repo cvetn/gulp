@@ -574,7 +574,7 @@ body{
       padding: 30px 48px 0;
     }
     @media (max-width: $sm){
-
+      display: none;
       flex-direction: column;
       align-items: left;
     }
@@ -666,6 +666,9 @@ body{
       padding-bottom: 11px;
       max-width: 221px;
       line-height: 16px;
+      @media (max-width: $xlg){
+        max-width: 251px;
+      }
     }
     &1{
       padding-bottom: 34px;
@@ -1561,4 +1564,12 @@ body{
     display: block;
     padding-top: 25px;
   }
+}
+
+.pay__offer{
+    padding-bottom: 20px;
+    p{
+      font-size: 13px;
+    display: inline-block;
+    }
 }
