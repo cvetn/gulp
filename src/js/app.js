@@ -42,10 +42,10 @@ $(function() {
     centeredSlides: true,
     loop: true,
 
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
 
   });
   //reviews slider
@@ -93,13 +93,15 @@ $(function() {
       delay: 2500,
       disableOnInteraction: false,
     },
-
-
   });
+
+
 
   $(".swiper-pagination-bullet:nth-child(1)").text('Тренировки')
   $(".swiper-pagination-bullet:nth-child(2)").text('Питание')
   $(".swiper-pagination-bullet:nth-child(3)").text('Отчеты')
+
+
 
 
   //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

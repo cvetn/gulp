@@ -1,6 +1,7 @@
 @import 'bower_components/reset-css/_reset';
 @import '_fonts.scss';
 @import 'bower_components/swiper/dist/css/swiper.min';
+@import 'bower_components/lightbox2/dist/css/lightbox.min';
 
 $xs: 550px;
 $sm: 768px;
@@ -228,9 +229,9 @@ body{
   &__menu{
     padding-top: 13px;
     float: left;
-    padding-right: 131px;
+    padding-right: 88px;
     @media (max-width: $lg) {
-      padding-right: 47px;
+      padding-right: 40px;
     }
     @media (max-width: $md) {
       clear: both;
@@ -256,6 +257,21 @@ body{
         display: block;
         padding: 18px 0;
         font-size: 20px;
+      }
+      a{
+        &::after{
+          content: '';
+          display: block;
+          background: #fc2c9a;
+          width: 100%;
+          margin-top: 5px;
+          height: 2px;
+          opacity: 0;
+          transition: all .6s;
+        }
+        &:hover:after{
+          opacity: 1;
+        }
       }
     }
   }
@@ -681,7 +697,7 @@ body{
     }
   }
   &__price{
-
+    color: #fe609f;
   }
   &__num{
     font-size: 40px;
@@ -831,6 +847,9 @@ body{
     .question__descr{
       display: block;
     }
+    img{
+      transform: rotate(180deg);
+    }
   }
   &:not(:nth-child(7n)){
     margin-bottom: 35px;
@@ -839,8 +858,7 @@ body{
     padding-bottom: 21px;
   }
   &__arrow{
-
-
+    transition: transform .5s;
   }
   &__descr{
     font-size: 14px;
@@ -955,8 +973,8 @@ body{
     }
   }
   &__email{
-    // text-align: right;
-    text-align: left;
+    text-align: right;
+    // text-align: left;
   }
 }
 
@@ -1238,53 +1256,7 @@ body{
 /*   MENU ICON />
 /*-----------------------------------------------------------------------------------*/
 
-#small-dialog {
-  width: 100vw;
-  height: auto;
-  display: block;
-}
-.mfp-wrap{
-  opacity: 0;
-  transition: opacity 1s;
-  background-color: #000;
-}
 
-/**
-* Fade-zoom animation for first dialog
-*/
-
-/* start state */
-.my-mfp-zoom-in .zoom-anim-dialog {
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-  transform: scale(0.8);
-}
-
-/* animate in */
-.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* animate out */
-.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
-  transform: scale(0.8);
-  opacity: 0;
-}
-
-/* Dark overlay, start state */
-.my-mfp-zoom-in.mfp-bg {
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-}
-/* animate in */
-.my-mfp-zoom-in.mfp-ready.mfp-bg {
-  opacity: 0.8;
-}
-/* animate out */
-.my-mfp-zoom-in.mfp-removing.mfp-bg {
-  opacity: 0;
-}
 
 
 // slider
@@ -1360,7 +1332,7 @@ body{
       left: -20px;
   }
   img{
-    max-width: 111%;
+    max-width: 91%;
   }
 
 }
@@ -1394,8 +1366,21 @@ body{
     margin-right: 5px;
     &-active{
       width: 30%;
-      background-color: #fe609f;
+      // background-color: #fe609f;
     }
+  }
+}
+
+.swiper-slide-active .progressBarSlider__item-active{
+  &:after{
+    content: '';
+    display: block;
+    background: #fe609f;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-name: progressIn;
+    height: 100%;
   }
 }
 
@@ -1531,9 +1516,17 @@ body{
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
+  }
+}
+
+@keyframes progressIn {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 
@@ -1548,28 +1541,34 @@ body{
 
 
 .pay-mobile{
-   display: none;
-   @media (max-width: $xs){
-     display: block;
-     padding-top: 25px;
-   }
-   .pay__button{
-     width: auto;
-   }
-}
-
-.sidebar__item3-mobile{
   display: none;
-  @media (max-width: $sm){
+  @media (max-width: $xs){
     display: block;
     padding-top: 25px;
+  }
+  .pay__button{
+    width: auto;
+  }
+}
+
+
+.sidebar__item3{
+  &__heading{
+    color: #fe609f;
+  }
+  &-mobile{
+    display: none;
+    @media (max-width: $sm){
+      display: block;
+      padding-top: 25px;
+    }
   }
 }
 
 .pay__offer{
-    padding-bottom: 20px;
-    p{
-      font-size: 13px;
+  padding-bottom: 20px;
+  p{
+    font-size: 13px;
     display: inline-block;
-    }
+  }
 }
