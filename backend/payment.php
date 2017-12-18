@@ -7,31 +7,39 @@
 $newSum     = $_POST['sum'];
 $promocode  = $_POST['promo'];
 $product_id = $_POST['product']; // invividual threemonths etc...
+
 if ( isset( $promocode ) && $promocode != '' ) {
+
 	$database = [
 		'MIROFS12'     => [
-			//'ptc'       => 10,
-			'abs'       => 500,
+            'product_id' => null,
+			'abs'       => 300,
 			'active_to' => '2017-12-31 23:59:59'
 		],
-		'HAPPYNEWYEAR' => [
-			'ptc'       => 33,
+		'INDIVIDUAL' => [
+            'product_id' => '5',
+			'abs'       => 1000,
 			'active_to' => '2018-01-08 00:00:00'
 		]
 	];
+
 	if ( isset( $database[ $promocode ] ) ) {
 		// Промокод найден
 		if ( strtotime( $database[ $promocode ]['active_to'] ) > time() ) {
 			// Если промокод еще активен
-			if ( isset( $database[ $promocode ]['ptc'] ) && $database[ $promocode ]['ptc'] > 0 ) {
-				// рассчитываем процентную скидку
-				$newSum = $newSum - ( $newSum * $database[ $promocode ]['ptc'] ) / 100;
-			}
-			if ( isset( $database[ $promocode ]['abs'] ) && $database[ $promocode ]['abs'] > 0 ) {
-				// рассчитываем абсолютную скидку
-				$newSum = $newSum - $database[ $promocode ]['abs'];
+			if($database[ $promocode ]['product_id'] == null || in_array($product_id, explode(',', $database[ $promocode ]['product_id']))) {
+				// Если промокод подходит купленному продукту
+				if ( isset( $database[ $promocode ]['percent'] ) && $database[ $promocode ]['percent'] > 0  && $database[ $promocode ]['percent'] < 100 ) {
+					// рассчитываем процентную скидку
+					$newSum = $newSum - ( $newSum * $database[ $promocode ]['percent'] ) / 100;
+				}
+				if ( isset( $database[ $promocode ]['abs'] ) && $database[ $promocode ]['abs'] > 0 ) {
+					// рассчитываем абсолютную скидку
+					$newSum = $newSum - $database[ $promocode ]['abs'];
+				}
 			}
 		}
+
 	}
 }
 
