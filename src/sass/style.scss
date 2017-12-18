@@ -20,9 +20,9 @@ a{
 }
 body{
   font-family: 'Diaria Sans Pro', sans-serif;
-      @media(min-width: $sm){
-        overflow-y: scroll !important;
-      }
+  @media(min-width: $sm){
+    overflow-y: scroll !important;
+  }
 }
 
 .button{
@@ -552,6 +552,9 @@ body{
   padding-bottom: 57px;
   padding-top: 52px;
   margin-bottom: 58px;
+  @media (min-width: $lg){
+    position: relative;
+  }
   @media (max-width: $xlg){
     width: 100%;
   }
@@ -607,7 +610,6 @@ body{
 
   &-main{
     overflow: hidden;
-    // padding-bottom: 71px !important;
     .choose__button{
       width: 256px;
       height: 45px;
@@ -714,6 +716,10 @@ body{
 }
 
 .pay{
+  @media (min-width: $lg){
+    position: absolute;
+    bottom: 30px;
+  }
   &__heading{
     color: #d0d0d0;
     font-size: 12px;
@@ -1191,6 +1197,9 @@ body{
     color: #ffffff;
     margin-top: 76px;
   }
+  &__audience{
+    line-height: 34px;
+  }
 }
 
 
@@ -1327,9 +1336,9 @@ body{
   }
   @media (max-width: $xs){
     // // top: 6182px;
-  // top: 6171px;
-        // top: 6544px;
-      left: -20px;
+    // top: 6171px;
+    // top: 6544px;
+    left: -20px;
   }
   img{
     max-width: 91%;
@@ -1426,19 +1435,19 @@ body{
 
 
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
-    position: relative;
-    top: 50px;
-    left: 70px;
-    width: 70%;
-    @media (max-width: $md){
-      top: -540px;
-    }
-    @media (max-width: $xs){
-      top: -370px;
-      width: 100%;
-      left: 0;
-    }
-///////////////////////////////////////
+  position: relative;
+  top: 50px;
+  left: 70px;
+  width: 70%;
+  @media (max-width: $md){
+    top: -540px;
+  }
+  @media (max-width: $xs){
+    top: -370px;
+    width: 100%;
+    left: 0;
+  }
+  ///////////////////////////////////////
 }
 
 .swiper-pagination-bullet{
@@ -1488,23 +1497,30 @@ body{
 
 .swiper-button-next, .swiper-button-prev{
   width: 44px;
-      border-radius: 100%;
-      background-color: #fe609f;
+  border-radius: 100%;
+  background-color: #fe609f;
 
 }
 
 
 .fsp-content{
   @media (max-width: $sm){
-      top: 80%!important;
+    top: 80%!important;
   }
 
 }
 .fsp-close{
-  right: 1em !important;
-  top: 0.5em !important;
+  right: 1.5em !important;
+  top: 1em !important;
   font-size: 45px !important;
   color: white;
+  &::before{
+    content: "";
+    background: url(../img/close.png) no-repeat center center;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
 }
 .fsp-wrapper{
   background: rgb(0, 0, 0) !important;
@@ -1553,6 +1569,10 @@ body{
 
 
 .sidebar__item3{
+  @media (min-width: $lg){
+    position: absolute;
+    bottom: 167px;
+  }
   &__heading{
     color: #fe609f;
   }
