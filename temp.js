@@ -685,3 +685,6 @@ $(function() {
 }},100)
 
 });
+
+
+    text-shadow: rgba(0, 0, 0, 1) 1px 7px 4px;

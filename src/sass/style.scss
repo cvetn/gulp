@@ -158,7 +158,7 @@ body{
   }
   &-about{
     background-image: url(../img/backg-about.jpg);
-    background-position-x: -280px;
+    background-position-x: -420px;
     background-color: black;
     color: #fff;
     @media (max-width: $lg){
@@ -696,10 +696,15 @@ body{
     }
     &3{
       padding-bottom: 52px;
+      .sidebar__heading{
+        color: #fe609f;
+        text-shadow: rgba(0, 0, 0, 1) 1px 7px 4px;
+      }
     }
   }
   &__price{
     color: #fe609f;
+    text-shadow: rgba(0, 0, 0, 1) 1px 7px 4px;
   }
   &__num{
     font-size: 40px;
@@ -1004,6 +1009,9 @@ body{
     font-size: 16px;
     line-height: 28px;
     padding-bottom: 31px;
+    &-hidden{
+      display: none;
+    }
   }
   &__link{
     font-size: 16px;
@@ -1025,6 +1033,10 @@ body{
     }
     &-2{
       top: 570px;
+    }
+    &-hidden{
+      opacity: 0;
+      transition: opacity 3s;
     }
   }
 }

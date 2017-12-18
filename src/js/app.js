@@ -105,6 +105,13 @@ $('.fullscreenPop').click(()=>{
 
   $('.fsp-close').html(' ')
 
+  $('.about__link').click(function(){
+      $('.about__descr-hidden').fadeIn();
+      $('.block-about').css({'background-image':'none'});
+      $('.about__coach').css({'opacity':'1'})
+      $(this).hide();
+  })
+
 
 
   //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

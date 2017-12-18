@@ -38,6 +38,13 @@ gulp.task('html', function () {
     stream: true
   }));
 });
+gulp.task('fav', function () {
+  gulp.src('src/favicon.png')
+  .pipe(gulp.dest('prod/'))
+  .pipe(browserSync.reload({
+    stream: true
+  }));
+});
 gulp.task('fonts', function () {
   gulp.src('src/fonts/*')
   .pipe(gulp.dest('prod/fonts'))
@@ -119,7 +126,7 @@ gulp.task('del', () => {
   return del.sync('prod/**/*');
 });
 
-gulp.task('default', ['sass', 'html','jslibs','appjs','del','img','fonts','server'], () => {
+gulp.task('default', ['sass', 'html','fav','jslibs','appjs','del','img','fonts','server'], () => {
   gulp.watch('src/img/*', ['img']);
   gulp.watch('src/*.html', ['html']);
   gulp.watch('src/sass/**/*.scss', ['sass']);
