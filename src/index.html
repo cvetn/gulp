@@ -17,7 +17,7 @@
           <ul>
             <li><a class="scrollLink" href=".block-courses">Программы</a></li>
             <li><a class="scrollLink" href=".block-slider2">Для кого</a></li>
-            <li><a>Конкурс</a></li>
+            <li><a class="fullscreenPop" href="#partnersPopup1">Конкурс</a></li>
             <li><a class="popup-with-zoom-anim fullscreenPop" href="#popupAbout">О проекте</a></li>
             <li><a class="scrollLink" href=".block-feedback">Результаты</a></li>
             <li><a class="scrollLink" href=".block-faq">FAQ</a></li>
@@ -942,6 +942,113 @@
   </div>
 </div>
 
+<div class="block block-form"  id="partnersForm" style="display: none;">
+  <div class="wrapper">
+    <div class="discount">
+      <!-- <img src="img/close.png" alt="" class="about__close"> -->
+      <form action="discount.html" class="form discount__form">
+        <p class="discount__heading">Заполните форму</p>
+        <p class="discount__descr"></p>
+          <div class="clearfix"></div>
+          <input class="first" name="firstname" type="text" placeholder="Вашe имя">
+          <input class="second" name="secondname" type="text" placeholder="Название вашей компании">
+          <div class="clearfix"></div>
+          <input class="third" name="phone" type="text" placeholder="Ваше телефон*">
+          <input class="fourth" name="email" type="text" placeholder="Ваш email*">
+          <div class="clearfix"></div>
+          <div class="discount__heading">Выберите формат размещения</div>
+          <div class="clearfix"></div>
+          <input class="first" name="firstname" type="text" placeholder="Логотип в раздел «Партнеры»">
+          <input class="second" name="secondname" type="text" placeholder="Баннер с рекомендацией">
+          <div class="clearfix"></div>
+          <button class="button discount__button">Оплатить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-partnership" id="partnersPopup" style="display: none;">
+    <div class="wrapper">
+      <div class="partnership">
+        <!-- <img src="img/close.png" alt="" class="about__close"> -->
+        <div class="partnership__item">
+          <div class="partnership__heading">Партнерам</div>
+          <div class="partnership__descr">
+            <p>Расскажите о своем продукте, чтобы стать нашим партнером. Принимаем заявки на электронную почту info@mirofs.ru.</p>
+            <p>Мы размещаем рекламные предложения только после одобрения Анастасией. Не размещаем продукцию, которая не соответствует тематике сайта.</p>
+          </div>
+        </div>
+        <div class="partnership__item">
+          <div class="partnership__heading">Аудитория</div>
+          <div class="partnership__descr"><p class="partnership__audience">более <span>620 000</span> подписчиков в Instagram</p>
+            <p class="partnership__audience">более 24 000 посетителей сайта в месяц</p>
+          </div>
+        </div>
+        <div class="partnership__item">
+          <div class="partnership__heading">Формат размещения</div>
+          <div class="partnership__img"><img src="img/squares.png" alt="">
+            <p>Логотип в разделе «Партнеры» </p>
+          </div>
+          <div class="partnership__img"><img src="img/squares2.png" alt="">
+            <p>Логотип в разделе «Партнеры» </p>
+          </div>
+        </div>
+        <button href="#partnersForm" class="button partnership__button fullscreenPop">Стать партнером</button>
+      </div>
+    </div>
+  </div>
+<!-- TODO EBANYE STILI VYNESTI OTTSUDA NAHUJ -->
+  <div class="block block-partnership" id="partnersPopup1" style="display: none;padding:0;    margin: 0 -130px;">
+    <div class="wrapper" >
+      <div class="partnership" style="max-width: 82%;">
+        <!-- <img src="img/close.png" alt="" class="about__close"> -->
+        <div class="partnership__item">
+
+          <div class="partnership__descr">
+            <div class="bannerWrap" style="margin: 0 auto;">
+              <img style="max-width: 106%;" src="img/banneraction2.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="partnership__item">
+
+          <div class="partnership__descr" style="    font-size: 20px;
+    color: #fff;">
+
+<ol style="display: block;
+list-style-type: decimal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;">
+  <li style="padding-bottom: 8px;">Приобретай и активируй любой курс на месяц со 2го по 30 декабря</li>
+  <li style="padding-bottom: 8px;">Создавай отчет «ДО» перед началом своих тренировок и принимай участие в конкурсе!</li>
+  <li style="padding-bottom: 8px;">Через месяц тренировок по программе загружай отчет «ПОСЛЕ» в личном
+    кабинете и получай реальные призы за лучшие результаты!</li>
+</ol>
+<br>
+
+*Подробные правила
+и инструкцию по созданию отчетов ты сможешь найти в разделе «Статьи» в
+статье про конкурс в твоем личном кабинете!
+
+  </div>
+        </div>
+        <!-- <div class="partnership__item">
+          <div class="partnership__heading">Формат размещения</div>
+          <div class="partnership__img"><img src="img/squares.png" alt="">
+            <p>Логотип в разделе «Партнеры» </p>
+          </div>
+          <div class="partnership__img"><img src="img/squares2.png" alt="">
+            <p>Логотип в разделе «Партнеры» </p>
+          </div>
+        </div>
+        <button href="#partnersForm" class="button partnership__button fullscreenPop">Стать партнером</button> -->
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -1123,61 +1230,7 @@
   </div>
 </div>
 
-<div class="block block-form"  id="partnersForm" style="display: none;">
-  <div class="wrapper">
-    <div class="discount">
-      <!-- <img src="img/close.png" alt="" class="about__close"> -->
-      <form action="discount.html" class="form discount__form">
-        <p class="discount__heading">Заполните форму</p>
-        <p class="discount__descr"></p>
-          <div class="clearfix"></div>
-          <input class="first" name="firstname" type="text" placeholder="Вашe имя">
-          <input class="second" name="secondname" type="text" placeholder="Название вашей компании">
-          <div class="clearfix"></div>
-          <input class="third" name="phone" type="text" placeholder="Ваше телефон*">
-          <input class="fourth" name="email" type="text" placeholder="Ваш email*">
-          <div class="clearfix"></div>
-          <div class="discount__heading">Выберите формат размещения</div>
-          <div class="clearfix"></div>
-          <input class="first" name="firstname" type="text" placeholder="Логотип в раздел «Партнеры»">
-          <input class="second" name="secondname" type="text" placeholder="Баннер с рекомендацией">
-          <div class="clearfix"></div>
-          <button class="button discount__button">Оплатить</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <div class="block block-partnership" id="partnersPopup" style="display: none;">
-    <div class="wrapper">
-      <div class="partnership">
-        <!-- <img src="img/close.png" alt="" class="about__close"> -->
-        <div class="partnership__item">
-          <div class="partnership__heading">Партнерам</div>
-          <div class="partnership__descr">
-            <p>Расскажите о своем продукте, чтобы стать нашим партнером. Принимаем заявки на электронную почту info@mirofs.ru.</p>
-            <p>Мы размещаем рекламные предложения только после одобрения Анастасией. Не размещаем продукцию, которая не соответствует тематике сайта.</p>
-          </div>
-        </div>
-        <div class="partnership__item">
-          <div class="partnership__heading">Аудитория</div>
-          <div class="partnership__descr"><p class="partnership__audience">более <span>620 000</span> подписчиков в Instagram</p>
-            <p class="partnership__audience">более 24 000 посетителей сайта в месяц</p>
-          </div>
-        </div>
-        <div class="partnership__item">
-          <div class="partnership__heading">Формат размещения</div>
-          <div class="partnership__img"><img src="img/squares.png" alt="">
-            <p>Логотип в разделе «Партнеры» </p>
-          </div>
-          <div class="partnership__img"><img src="img/squares2.png" alt="">
-            <p>Логотип в разделе «Партнеры» </p>
-          </div>
-        </div>
-        <button class="button partnership__button">Стать партнером</button>
-      </div>
-    </div>
-  </div>
 
 
 

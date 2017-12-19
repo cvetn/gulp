@@ -76,8 +76,8 @@ body{
     color: #fff;
     background-image: url(../img/bgEntry.jpg);
     @media (min-width: $xlg) {
-      background-position: 20% 0;
-    }
+      background-position: 20% 12px;
+      }
     @media (max-width: $lg) {
       background-position-x: -140px;
     }
@@ -638,6 +638,7 @@ body{
     width: 257px;
     height: 229px;
     padding: 27px 22px 0 21px;
+    transition: max-height 1s;
     @media (max-width: $md){
       width: 100% !important;
     }
@@ -650,6 +651,9 @@ body{
       @media (max-width: $md){
         margin-bottom: 15px;
       }
+    }
+    &-activeMobile{
+      max-height: 500px !important;
     }
     &-heading{
       font-size: 15px;
@@ -665,6 +669,11 @@ body{
   &-special{
     .choose__button{
       width: 188px;
+      @media (max-width: $sm){
+        overflow: hidden;
+        max-height: 45px;
+        padding:17px 21px 14px 20px;
+      }
     }
   }
 }
@@ -1016,6 +1025,7 @@ body{
   &__link{
     font-size: 16px;
     border-bottom: 1px dashed #949494;
+    cursor: pointer;
   }
   &__close{
     position: absolute;

@@ -13,10 +13,13 @@ $(function() {
     // Options
   });
 
-
 $('.fullscreenPop').click(()=>{
-    $('.fsp-close').html(' ')
+    $('.fsp-close').html(' ');
+    // $('body').css({'overflow-y':'hidden','padding-right':'15px'});
 })
+// $('a.fsp-close').click(()=>{
+//   $('body').css({'overflow-y':'auto','padding-right':'0px'});
+// })
 
 
   //scroll to anchor from top nav
@@ -103,7 +106,12 @@ $('.fullscreenPop').click(()=>{
   $(".swiper-pagination-bullet:nth-child(2)").text('Питание')
   $(".swiper-pagination-bullet:nth-child(3)").text('Отчеты')
 
-  $('.fsp-close').html(' ')
+  $('.fsp-close').html(' ');
+
+  // $('.partnership__button').click(()=>{
+  //   $('.fsp-wrapper').hide();
+  //   $('.fsp-content').has('#partnersForm').length>0
+  // })
 
   $('.about__link').click(function(){
       $('.about__descr-hidden').fadeIn();
@@ -111,6 +119,7 @@ $('.fullscreenPop').click(()=>{
       $('.about__coach').css({'opacity':'1'})
       $(this).hide();
   })
+
 
 
 
@@ -144,6 +153,11 @@ $('.fullscreenPop').click(()=>{
       mainAddChilds.addClass('button-disabled');
       mainChilds.removeClass('button-active');
       mainAddChilds.removeClass('button-active');
+    }
+
+    // Logic for mobile devices
+    if ( window.innerWidth<768 && !($this.parent().hasClass('choose-main'))){
+      $this.addClass('choose__button-activeMobile');
     }
 
 
@@ -346,6 +360,8 @@ $('.fullscreenPop').click(()=>{
       renderSidebarStep3(specId);
     }
   });
+
+
 
 
 //Checkbox Согласен с условиями
