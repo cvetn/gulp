@@ -13,8 +13,13 @@ $(function() {
     // Options
   });
 
-
-
+$('.fullscreenPop').click(()=>{
+    $('.fsp-close').html(' ');
+    // $('body').css({'overflow-y':'hidden','padding-right':'15px'});
+})
+// $('a.fsp-close').click(()=>{
+//   $('body').css({'overflow-y':'auto','padding-right':'0px'});
+// })
 
 
   //scroll to anchor from top nav
@@ -42,10 +47,10 @@ $(function() {
     centeredSlides: true,
     loop: true,
 
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
 
   });
   //reviews slider
@@ -93,13 +98,29 @@ $(function() {
       delay: 2500,
       disableOnInteraction: false,
     },
-
-
   });
+
+
 
   $(".swiper-pagination-bullet:nth-child(1)").text('Тренировки')
   $(".swiper-pagination-bullet:nth-child(2)").text('Питание')
   $(".swiper-pagination-bullet:nth-child(3)").text('Отчеты')
+
+  $('.fsp-close').html(' ');
+
+  // $('.partnership__button').click(()=>{
+  //   $('.fsp-wrapper').hide();
+  //   $('.fsp-content').has('#partnersForm').length>0
+  // })
+
+  $('.about__link').click(function(){
+      $('.about__descr-hidden').fadeIn();
+      $('.block-about').css({'background-image':'none'});
+      $('.about__coach').css({'opacity':'1'})
+      $(this).hide();
+  })
+
+
 
 
   //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -132,6 +153,11 @@ $(function() {
       mainAddChilds.addClass('button-disabled');
       mainChilds.removeClass('button-active');
       mainAddChilds.removeClass('button-active');
+    }
+
+    // Logic for mobile devices
+    if ( window.innerWidth<768 && !($this.parent().hasClass('choose-main'))){
+      $this.addClass('choose__button-activeMobile');
     }
 
 
@@ -197,21 +223,21 @@ $(function() {
         // parameters for paypal buttons
         pp_order: 2,
         pp_name:'Курс Базовый',
-        price : '3000',
+        price : '3000 P',
         buttonHref : '#order1'
       },
       advance : {
         // parameters for paypal buttons
         pp_order: 3,
         pp_name:'Курс Продвинутый',
-        price : '3000',
+        price : '3000 P',
         buttonHref : '#order2'
       },
       intensive : {
         // parameters for paypal buttons
         pp_order: 6,
         pp_name:'Курс Интенсивный',
-        price : '3000',
+        price : '3000 P',
         buttonHref : '#order3'
       },
 
@@ -228,7 +254,7 @@ $(function() {
           ul : ['Авторскую программу тренировок на месяц','Статью-рекомендацию по питанию',
           'Чат с куратором и участниками проекта в Telegram','Базу знаний о здоровом питании и тренировках','Комплекс растяжки в подарок']
         },
-        price : '2500',
+        price : '2500 Р',
         buttonHref : '#order4'
       },
 
@@ -245,7 +271,7 @@ $(function() {
           ul : ['Индивидуальную программу тренировок на месяц','План питания на месяц','Чат с куратором и участниками проекта в Telegram',
           'Чат с диетологом','Чат с Анастасией Мироновой', 'Базу знаний о здоровом питании и тренировках', 'Комплекс растяжки в подарок']
         },
-        price : '8000',
+        price : '8000 Р',
         buttonHref : '#order5'
       },
 
@@ -264,7 +290,7 @@ $(function() {
           'Чат с куратором и участниками проекта в Telegram','Базу знаний с полезными статьями',
           'Комплекс растяжки в подарок']
         },
-        price : '3500',
+        price : '3500 Р',
         buttonHref : '#order6'
       },
       stretch : {
@@ -279,7 +305,7 @@ $(function() {
           heading : 'Курс включает:',
           ul : ['Письмо с авторской программой по растяжке 2-ух уровней сложности','Видео и текстовое описание упражнений','Рекомендации по выполнению комплекса']
         },
-        price : '1000',
+        price : '1000 Р',
         buttonHref : '#order7'
       }
     }
@@ -461,6 +487,8 @@ $(function() {
             }
         }, '#'+id);
     }
+
+
 
 //Checkbox Согласен с условиями
   $('.pay_checkbox').click(function(){
