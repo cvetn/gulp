@@ -194,19 +194,31 @@ $(function() {
       },
 
       basic : {
+        // parameters for paypal buttons
+        pp_order: 2,
+        pp_name:'Курс Базовый',
         price : '3000',
         buttonHref : '#order1'
       },
       advance : {
+        // parameters for paypal buttons
+        pp_order: 3,
+        pp_name:'Курс Продвинутый',
         price : '3000',
         buttonHref : '#order2'
       },
       intensive : {
+        // parameters for paypal buttons
+        pp_order: 6,
+        pp_name:'Курс Интенсивный',
         price : '3000',
         buttonHref : '#order3'
       },
 
       novice : {
+        // parameters for paypal buttons
+        pp_order: 1,
+        pp_name:'Курс Новичок',
         descr1 : {
           heading : 'Новичок',
           ul : ['Поможет освоить технику выполнения упражнений','Познать азы правильного питания', 'Курс можно приобрести для участия в конкурсе']
@@ -221,6 +233,9 @@ $(function() {
       },
 
       individual : {
+        // parameters for paypal buttons
+        pp_order: 5,
+        pp_name:'Курс Индивидуальный',
         descr1 : {
           heading : 'Индивидуальный',
           ul : ['Подойдет при ограничениях по состоянию здоровья','Укажи все пожелания по курсу в анкете']
@@ -235,6 +250,9 @@ $(function() {
       },
 
       anticel : {
+        // parameters for paypal buttons
+        pp_order: 7,
+        pp_name:'Курс Антицеллюлитный',
         descr1 : {
           heading : 'Антицеллюлитный',
           ul : ['Курс на все тело с упором на проблемные зоны','Незаменимый комплекс для любой девушки']
@@ -250,6 +268,9 @@ $(function() {
         buttonHref : '#order6'
       },
       stretch : {
+        // parameters for paypal buttons
+        pp_order: 0,
+        pp_name:'Курс Растяжка',
         descr1 : {
           heading : 'Растяжка',
           ul : ['Комплекс не привязан к личному кабинету','Уникальная программа для повышения гибкости тела','Улучшит осанку и защитит суставы от травм']
@@ -303,6 +324,9 @@ $(function() {
       // Подставляем данные из объекта
       price.text( sidebarData[course].price);
       paymentButton.attr('href', sidebarData[course].buttonHref);
+      // render paypal buttons
+      $('.pp-container').attr('id', 'paypal-button-container-' + sidebarData[course].pp_order);
+      renderPaypal(sidebarData[course])
     }
 
     //for render on button step3
@@ -321,6 +345,9 @@ $(function() {
       payBlock.css({'opacity':'1','transition':'opacity 1s'});
       price.text( sidebarData[course].price);
       paymentButton.attr('href', sidebarData[course].buttonHref);
+      // render paypal buttons
+      $('.pp-container').attr('id', 'paypal-button-container-' + sidebarData[course].pp_order);
+      renderPaypal(sidebarData[course])
     }
 
     //Вызываем функции рендера в зависимости от нажатой кнопки
@@ -335,6 +362,105 @@ $(function() {
     }
   });
 
+    // Function for render paypal buttons
+    function renderPaypal(course) {
+        $('.paypal-button').css('display', 'none');
+        // Кнопка 1
+        paypal.Button.render({
+            env: 'production', // sandbox | production
+            client: {
+                sandbox: 'ATDvmmFSbgIHFdYLPwOduQcwBLrI5gJHpyEBQ1hDNtgJpwRMvV8JyJcJIF9e1Acc3BjJsAYntjnajxjO',
+
+                production: 'AWqJtaEYhMniw6nQLxPtxgvyOS7R6p6Iz__ROSSBxf07ju2QaoaV4hObcJyPsTNBMNXWrFW11aEUT1kY'
+            },
+            style: {
+                label: 'pay', // checkout | credit | pay
+                size: 'small',    // small | medium | responsive
+                shape: 'pill',     // pill | rect
+                color: 'blue'      // gold | blue | silver
+            },
+            payment: function (data, actions) {
+                //dataLayer.push({'event': 'paypal_button'}); // todo Google Analytics Event
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                custom: 'landing', // метка для обработки платежей ЛК (остальные платежи с PayPal без данной метки не будут обрабатываться ЛК)
+                                amount: {total: course.price, currency: 'RUB'},
+                                description: course.pp_name,
+                                item_list: {
+                                    items: [
+                                        {
+                                            name: course.pp_name,
+                                            sku: course.order, // (order == 0 соотв. растяжке, которого нет в кабинете)
+                                            price: course.price,
+                                            currency: "RUB",
+                                            quantity: 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                });
+            },
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    window.alert('Спасибо за оплату! Вся информация отправлена вам на почту!');
+                    //dataLayer.push({'event': 'paypal'}); // todo Google Analytics Event
+                });
+            }
+        }, '#paypal-button-container-' + course.pp_order);
+    }
+    function renderPaypalOnMob(course, id) {
+        $('.paypal-button').css('display', 'none');
+        // Кнопка 1
+        paypal.Button.render({
+            env: 'production', // sandbox | production
+            client: {
+                sandbox: 'ATDvmmFSbgIHFdYLPwOduQcwBLrI5gJHpyEBQ1hDNtgJpwRMvV8JyJcJIF9e1Acc3BjJsAYntjnajxjO',
+
+                production: 'AWqJtaEYhMniw6nQLxPtxgvyOS7R6p6Iz__ROSSBxf07ju2QaoaV4hObcJyPsTNBMNXWrFW11aEUT1kY'
+            },
+            style: {
+                label: 'pay', // checkout | credit | pay
+                size: 'small',    // small | medium | responsive
+                shape: 'pill',     // pill | rect
+                color: 'blue'      // gold | blue | silver
+            },
+            payment: function (data, actions) {
+                //dataLayer.push({'event': 'paypal_button'}); // todo Google Analytics Event
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                custom: 'landing', // метка для обработки платежей ЛК (остальные платежи с PayPal без данной метки не будут обрабатываться ЛК)
+                                amount: {total: course.price, currency: 'RUB'},
+                                description: course.pp_name,
+                                item_list: {
+                                    items: [
+                                        {
+                                            name: course.pp_name,
+                                            sku: course.order, // (order == 0 соотв. растяжке, которого нет в кабинете)
+                                            price: course.price,
+                                            currency: "RUB",
+                                            quantity: 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                });
+            },
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    window.alert('Спасибо за оплату! Вся информация отправлена вам на почту!');
+                    //dataLayer.push({'event': 'paypal'}); // todo Google Analytics Event
+                });
+            }
+        }, '#'+id);
+    }
 
 //Checkbox Согласен с условиями
   $('.pay_checkbox').click(function(){
@@ -348,4 +474,157 @@ $(function() {
   //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
+    /* Validation */
+    /* Localization */
+    $.extend( $.validator.messages, {
+        required: "Это поле необходимо заполнить.",
+        remote: "Пожалуйста, введите правильное значение.",
+        email: "Пожалуйста, введите корректный адрес электронной почты.",
+        url: "Пожалуйста, введите корректный URL.",
+        date: "Пожалуйста, введите корректную дату.",
+        dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
+        number: "Пожалуйста, введите число.",
+        digits: "Пожалуйста, вводите только цифры.",
+        creditcard: "Пожалуйста, введите правильный номер кредитной карты.",
+        equalTo: "Пожалуйста, введите такое же значение ещё раз.",
+        extension: "Пожалуйста, выберите файл с правильным расширением.",
+        maxlength: $.validator.format( "Пожалуйста, введите не больше {0} символов." ),
+        minlength: $.validator.format( "Пожалуйста, введите не меньше {0} символов." ),
+        rangelength: $.validator.format( "Пожалуйста, введите значение длиной от {0} до {1} символов." ),
+        range: $.validator.format( "Пожалуйста, введите число от {0} до {1}." ),
+        max: $.validator.format( "Пожалуйста, введите число, меньшее или равное {0}." ),
+        min: $.validator.format( "Пожалуйста, введите число, большее или равное {0}." )
+    } );
+
+    /* Payment Forms */
+    $(".js-validate-payments").each(function(){
+        $(this).validate();
+    });
+
+    /* SendPulse Forms */
+    $(".js-validate-promo").each(function() {
+        $(this).validate({
+
+            submitHandler: function(form) {
+                var $form = $(form);
+                $.ajax({
+                    type: 'post',
+                    url: '/backend/sendpulse/index.php',
+                    data: $form.serialize(),
+                    success: function(r){
+                        if(r === '1') {
+                            $form.append('<div class="js-response">Спасибо!Промокод будет отправлен Вам в течение 24 часов</div>');
+                            // var target = $form.find('[data-target]').val();
+                            //yaCounter44571419.reachGoal(target); // todo установить цель метрики
+                            $form[0].reset();
+                        } else {
+                            var tpl = '<div class="modal">';
+                            tpl += '<div class="modal_title">Ошибка!</div>';
+                            tpl += '<div class="modal_content">'+r+'</div>';
+                            tpl += '</div>';
+                            $.fancybox.open({
+                                content: tpl
+                            }, {
+                                padding: 0
+                            });
+                        }
+                    }
+                });
+                return false;
+            }
+
+        });
+    });
+
+    /* Feedback Forms */
+    $(".js-validate-feedback").each(function() {
+        $(this).validate({
+
+            submitHandler: function(form) {
+                var $form = $(form);
+                $.ajax({
+                    type: 'post',
+                    url: '/backend/post.php',
+                    data: $form.serialize(),
+                    success: function(r){
+                        if(r === '1') {
+                            $form.append('<div class="js-response">Спасибо!Промокод будет отправлен Вам в течение 24 часов</div>');
+                            // var target = $form.find('[data-target]').val();
+                            //yaCounter44571419.reachGoal(target); // todo установить цель метрики
+                            $form[0].reset();
+                        } else {
+                            var tpl = '<div class="modal">';
+                            tpl += '<div class="modal_title">Ошибка!</div>';
+                            tpl += '<div class="modal_content">'+r+'</div>';
+                            tpl += '</div>';
+                            $.fancybox.open({
+                                content: tpl
+                            }, {
+                                padding: 0
+                            });
+                        }
+                    }
+                });
+                return false;
+            }
+
+        });
+    });
+
+    // Mobile paypal
+    window.onload = function () {
+
+        // todo: выведено в отдельную переменную, т.к. нужно рендерить кнопки в мобильной версии при загрузке страницы. При желании, можно рендер переместить в код конфигуратора, настроив подходящее событие для рендера.
+        var paypalData = {
+            basic: {
+                // parameters for paypal buttons
+                pp_order: 2,
+                pp_name: 'Курс Базовый',
+                price: '3000',
+            },
+            advance: {
+                // parameters for paypal buttons
+                pp_order: 3,
+                pp_name: 'Курс Продвинутый',
+                price: '3000',
+            },
+            intensive: {
+                // parameters for paypal buttons
+                pp_order: 6,
+                pp_name: 'Курс Интенсивный',
+                price: '3000',
+            },
+
+            novice: {
+                // parameters for paypal buttons
+                pp_order: 1,
+                pp_name: 'Курс Новичок',
+                price: '2500',
+            },
+
+            individual: {
+                // parameters for paypal buttons
+                pp_order: 5,
+                pp_name: 'Курс Индивидуальный',
+                price: '8000',
+            },
+
+            anticel: {
+                // parameters for paypal buttons
+                pp_order: 7,
+                pp_name: 'Курс Антицеллюлитный',
+                price: '3500',
+            },
+            stretch: {
+                // parameters for paypal buttons
+                pp_order: 0,
+                pp_name: 'Курс Растяжка',
+                price: '1000',
+            }
+        };
+
+        $('.paypal-mobile-container').each(function () {
+            renderPaypalOnMob(paypalData[$(this).data('course')], $(this).attr('id'))
+        });
+    }
 });

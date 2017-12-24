@@ -1,0 +1,12 @@
+input.error, textarea.error {
+  border-color: #f22 !important;
+}
+label.error{
+  display: none !important;
+}
+.js-response {
+  text-align: center;
+  margin-top: 20px;
+  border: 1px solid #0a5;
+  line-height: 32px;
+}
