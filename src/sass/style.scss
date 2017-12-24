@@ -1,5 +1,6 @@
 @import 'bower_components/reset-css/_reset';
 @import '_fonts.scss';
+@import 'validation';
 @import 'bower_components/swiper/dist/css/swiper.min';
 @import 'bower_components/lightbox2/dist/css/lightbox.min';
 
@@ -1579,6 +1580,20 @@ body{
 
 
 .pay-mobile{
+   display: none;
+   @media (max-width: $xs){
+     display: block;
+     padding-top: 25px;
+     .paypal-mobile-container > div {
+       display: block !important;
+     }
+   }
+   .pay__button{
+     width: auto;
+   }
+}
+
+.sidebar__item3-mobile{
   display: none;
   @media (max-width: $xs){
     display: block;
