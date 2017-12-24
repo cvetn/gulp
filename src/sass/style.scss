@@ -65,6 +65,9 @@ body{
   @media (max-width: $xs) {
     width: 350px;
   }
+  @media (max-width: 350px) {
+    width: 320px;
+  }
 }
 
 .block{
@@ -1586,12 +1589,15 @@ body{
      padding-top: 25px;
      .paypal-mobile-container > div {
        display: block !important;
+       display: flex !important;
+       justify-content: center;
      }
    }
    .pay__button{
      width: auto;
    }
 }
+
 
 .sidebar__item3-mobile{
   display: none;
@@ -1628,4 +1634,9 @@ body{
     font-size: 13px;
     display: inline-block;
   }
+}
+
+.paypal-container{
+  display: flex;
+  justify-content: center;
 }

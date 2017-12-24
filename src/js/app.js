@@ -157,7 +157,8 @@ $('.fullscreenPop').click(()=>{
 
     // Logic for mobile devices
     if ( window.innerWidth<768 && !($this.parent().hasClass('choose-main'))){
-      $this.addClass('choose__button-activeMobile');
+      $this.toggleClass('choose__button-activeMobile');
+      $this.siblings().removeClass('choose__button-activeMobile');
     }
 
 
